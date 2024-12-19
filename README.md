@@ -60,6 +60,10 @@ Description
 \frac{t}{\tau} e^{1 - \frac{t}{\tau}}
 ```
 
+```math
+\frac{t}{\tau} exp(1 - \frac{t}{\tau})
+```
+
 Usage
 
 Arguments
