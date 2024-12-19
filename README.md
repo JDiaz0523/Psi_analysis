@@ -43,7 +43,7 @@ git clone https://github.com/your_username/psi-analysis.git
 | Function           | Description                                                 |
 |--------------------|-------------------------------------------------------------|
 | do.alpha.pulse     | Generates an alpha function vector given the $\tau$ parameter. |
-| do.dual.exp.pulse  | Generates a dual-exponential function vector given tau1 and tau2 parameters. |
+| do.dual.exp.pulse  | Generates a dual-exponential function vector given $\tau_1$ and $\tau_2$ parameters. |
 | unitE              | Rescales a vector to unit energy (default), or to any other arbitrary value. |
 | var.delay          | Computes the variance of a signal after subtracting delayed copies of itself. |
 | neg.diff.ACF       | Computes the negative derivative of the autocovariance function. |
