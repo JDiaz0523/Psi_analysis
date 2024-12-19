@@ -57,7 +57,7 @@ do.alpha.pulse
 ---
 Description
 ```math
-\frac{t}{\tau}
+\frac{t}{\tau} e^{1 - \frac{t}{\tau}}
 ```
 
 Usage
