@@ -20,7 +20,7 @@ This approach ensures you can quickly test the framework without complex setup s
 ## Table of Contents
 1. [About Psi-analysis](#about-psi-analysis)
 2. [Installation](#installation)
-3. [Functions list](#functions-list)
+3. [Functions list](#Function-Descriptions-Table)
 4. [Usage](#usage)
 5. [Examples](#examples)
 6. [Quick Start](#quick-start)
@@ -37,7 +37,6 @@ Clone this repository and install the required R packages.
 ```bash
 git clone https://github.com/your_username/psi-analysis.git
 ```
-## Functions list
 ## Function Descriptions Table
 
 | Function           | Description                                                 |
