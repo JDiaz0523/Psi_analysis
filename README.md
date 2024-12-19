@@ -34,7 +34,9 @@ It is particularly effective for identifying characteristic Psi-matrix patterns 
 
 ## Installation
 Clone this repository and install the required R packages.  
-
+```bash
+git clone https://github.com/your_username/psi-analysis.git
+```
 ## Functions list
 ## Function Descriptions Table
 
@@ -50,6 +52,3 @@ Clone this repository and install the required R packages.
 | plot.Psi.matrix    | Displays the Psi matrix using a parameterizable pseudocolor scale. |
 | map.vector         | Rescales a vector to a specified length using proportional mapping. |
 
-
-```bash
-git clone https://github.com/your_username/psi-analysis.git
