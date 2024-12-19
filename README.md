@@ -56,7 +56,9 @@ git clone https://github.com/your_username/psi-analysis.git
 do.alpha.pulse
 ---
 Description
-$$ \frac{t}{\tau} $$
+```math
+\frac{t}{\tau}
+```
 
 Usage
 
