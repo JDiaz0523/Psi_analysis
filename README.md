@@ -52,3 +52,7 @@ git clone https://github.com/your_username/psi-analysis.git
 | plot.Psi.matrix    | Displays the Psi matrix using a parameterizable pseudocolor scale. |
 | map.vector         | Rescales a vector to a specified length using proportional mapping. |
 
+---
+do.alpha.pulse
+---
+
