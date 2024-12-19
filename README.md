@@ -20,10 +20,11 @@ This approach ensures you can quickly test the framework without complex setup s
 ## Table of Contents
 1. [About Psi-analysis](#about-psi-analysis)
 2. [Installation](#installation)
-3. [Usage](#usage)
-4. [Examples](#examples)
-5. [Quick Start](#quick-start)
-6. [Contributing](#contributing)
+3. [Functions list](#functions-list)
+4. [Usage](#usage)
+5. [Examples](#examples)
+6. [Quick Start](#quick-start)
+7. [Contributing](#contributing)
 
 ---
 
@@ -33,6 +34,22 @@ It is particularly effective for identifying characteristic Psi-matrix patterns 
 
 ## Installation
 Clone this repository and install the required R packages.  
+
+## Functions list
+## Function Descriptions Table
+
+| Function           | Description                                                 |
+|--------------------|-------------------------------------------------------------|
+| do.alpha.pulse     | Generates an alpha function vector given the tau parameter. |
+| do.dual.exp.pulse  | Generates a dual-exponential function vector given tau1 and tau2 parameters. |
+| unitE              | Rescales a vector to unit energy (default), or to any other arbitrary value. |
+| var.delay          | Computes the variance of a signal after subtracting delayed copies of itself. |
+| neg.diff.ACF       | Computes the negative differentiation of the autocovariance function. |
+| epoch.feature      | Divides a signal into epochs and evaluates a feature according to a given function. |
+| specular.ext       | Extends a vector by mirroring its ends.                     |
+| plot.Psi.matrix    | Displays the Psi matrix using a parameterizable pseudocolor scale. |
+| map.vector         | Rescales a vector to a specified length using proportional mapping. |
+
 
 ```bash
 git clone https://github.com/your_username/psi-analysis.git
