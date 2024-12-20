@@ -168,4 +168,4 @@ A numeric vector with length `max.delay` + 1 (a zero value is added as the fist 
 # Following eq. 11 (ref), Psi can be numerically calculated as 
 Psi <- diff(var.delay(signal, max.delay))/2
 ```
-Important: This function implemented in R is sluggish and only serves demonstrative reasons, such as numerically demonstrating the equivalence of equations 11 and 12 (ref), which is supported by equation 9 (see demo script 2). To improve efficiency, it is advised to analyze Psi using the function 'neg.diff.ACF', which relies on the optimized function acf.
+Important: This function operates slowly in R and is only useful for demonstrations, such as numerically illustrating the equivalence of equations 11 and 12 (ref), which is supported by equation 9 (see demo script 2). To enhance performance, use the function 'neg.diff.ACF' to calculate Psi, which is based on the optimized function acf.
