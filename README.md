@@ -188,7 +188,7 @@ neg.diff.ACF(signal, max.delay)
 | `max.delay`   | Maximum delay to evaluate the variance. |
 
 #### **Value**
-A numeric vector with length `max.delay`..
+A numeric vector with length `max.delay`.
 
 #### **Example**
 ```r
