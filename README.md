@@ -80,7 +80,7 @@ A floating-point vector of length `t.max`$\times$`fs`
 #### **Description**
 Generates a dual-exponential function vector defined by the equation:
 ```math
-\frac{\tau_1\tau_2}{\tau_1 - \tau_2} \, e^{1 - \frac{t}{\tau}}
+\frac{\tau_1\tau_2}{\tau_1 - \tau_2} \, (e^{-\frac{t}{\tau2}} - e^{-\frac{t}{\tau1}})
 ```
 This function is widely used for modeling neuronal activation waveforms, including simulations of synaptic conductances and other time-dependent neural processes.
 
