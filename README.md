@@ -59,10 +59,15 @@ Generates an alpha function vector defined by the equation:
 ```math
 \frac{t}{\tau} \, e^{1 - \frac{t}{\tau}}
 ```
-This function is widely used for modeling neuronal activation waveforms, including simulations of synaptic conductances and other time-dependent neural processes. It computes values for a time vector sampled at a specified rate `fs` (samples per second) and `t.max` (seconds).
+This function is widely used for modeling neuronal activation waveforms, including simulations of synaptic conductances and other time-dependent neural processes. It computes values for a time vector sampled at a specified rate `fs` (samples per second) during `t.max` (seconds).
 
 Usage
+do.alpha.pulse(`tau`, `fs`, `t.max`)
 
 Arguments
+`tau` : time constant $\tau$ (seconds)
+`fs` : sampling rate (samples per second)
+`t.max` : time length (seconds) 
 
 Value
+a floating point vector of length `t.max`x`fs`
