@@ -129,7 +129,7 @@ unitE(v, outputE = 1)
 | Argument | Description |  
 |----------|-------------|
 | `v`    | A numeric vector representing the input signal. |
-| `outputE`   | IThe desired energy of the output vector (default is 1). |
+| `outputE`   | The desired energy of the output vector (default is 1). |
 
 #### **Value**
 A numeric vector with the same length as the input vector, scaled to the specified energy.
