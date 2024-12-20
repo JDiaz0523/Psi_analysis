@@ -70,4 +70,4 @@ Arguments
 `t.max` : time length (seconds) 
 
 Value
-a floating point vector of length `t.max`x`fs`
+a floating point vector of length `t.max`$\times$`fs`
