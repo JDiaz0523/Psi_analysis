@@ -51,7 +51,7 @@ git clone https://github.com/your_username/psi-analysis.git
 | plot.Psi.matrix    | Displays the Psi matrix using a parameterizable pseudocolor scale. |
 | map.vector         | Rescales a vector to a specified length using proportional mapping. |
 
----
+---------------------------------------------------------------------------------------
 ### **do.alpha.pulse**
 ---
 #### **Description**
@@ -81,7 +81,7 @@ A floating-point vector of length `t.max`$\times$`fs`
 plot(do.alpha.pulse(0.1, 1000, 1), type="l")
 ```
 
----
+---------------------------------------------------------------------------------------
 ### **do.dual.exp.pulse**
 ---
 #### **Description**
@@ -114,7 +114,7 @@ A floating-point vector of length `t.max`$\times$`fs`
 plot(do.dual.exp.pulse(0.01, 0.1, 1000, 1), type="l")
 ```
 
----
+---------------------------------------------------------------------------------------
 ### **unitE**
 ---
 #### **Description**
@@ -139,6 +139,6 @@ A numeric vector with the same length as the input vector, scaled to the specifi
 # Scale an alpha pulse to unit energy
 pulse <- unitE(do.alpha.pulse(0.1, 1000, 1))
 
-# Scale another alpha pulse to have an energy of 2
+# Scale another instance of the alpha pulse to achieve an energy of 2.
 pulse2 <- unitE(do.alpha.pulse(0.1, 1000, 1), outputE = 2)
 ```
