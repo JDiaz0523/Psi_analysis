@@ -105,3 +105,25 @@ A floating-point vector of length `t.max`$\times$`fs`
 
 #### **Example**
 plot(do.dual.exp.pulse(0.01, 0.1, 1000, 1), type="l")
+
+---
+### **unitE**
+---
+#### **Description**
+Generates a dual-exponential function vector defined by the equation:
+This function is widely used for modeling neuronal activation waveforms, including simulations of synaptic conductances and other time-dependent neural processes.
+
+#### **Usage**
+unitE(`v`, `outputE`)
+
+#### **Arguments**
+| Argument | Description |  
+|----------|-------------|
+| `v`    | Vector representing the input signal |
+| `outputE`    | Intended energy of the output (1 by defaut) |
+
+#### **Value**
+A floating-point vector with the same length as the input vector.
+
+#### **Example**
+plot(do.dual.exp.pulse(0.01, 0.1, 1000, 1), type="l")
