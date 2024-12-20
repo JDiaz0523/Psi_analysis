@@ -169,3 +169,29 @@ A numeric vector with length `max.delay` + 1 (a zero value is added as the fist 
 Psi <- diff(var.delay(signal, max.delay))/2
 ```
 Important: This function operates slowly in R and is only useful for demonstrations, such as numerically illustrating the equivalence of equations 11 and 12 (ref), which is supported by equation 9 (see demo script 2). To enhance performance, use the function 'neg.diff.ACF' to calculate Psi, which is based on the optimized function acf.
+
+---------------------------------------------------------------------------------------
+### **neg.diff.ACF**
+---
+#### **Description**
+Computes the negative derivative of the autocovariance function.
+
+#### **Usage**
+```r
+neg.diff.ACF(signal, max.delay)
+```
+
+#### **Arguments**
+| Argument | Description |  
+|----------|-------------|
+| `signal`    | A numeric vector representing the input signal. |
+| `max.delay`   | Maximum delay to evaluate the variance. |
+
+#### **Value**
+A numeric vector with length `max.delay`..
+
+#### **Example**
+```r
+# Following eq. 12 (ref), Psi can be numerically calculated as 
+Psi <- neg.diff.ACF(signal, max.delay)
+```
