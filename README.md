@@ -59,6 +59,7 @@ Generates an alpha function vector defined by the equation:
 ```math
 \frac{t}{\tau} \, e^{1 - \frac{t}{\tau}}
 ```
+This function is widely used in signal processing and modeling to simulate time-based phenomena such as response curves. It computes values for a time vector sampled at a specified rate `fs` (samples per second) and `t.max` (seconds).
 
 Usage
 
