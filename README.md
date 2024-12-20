@@ -75,7 +75,9 @@ do.alpha.pulse(`tau`, `fs`, `t.max`)
 A floating-point vector of length `t.max`$\times$`fs`
 
 #### **Example**
+```r
 plot(do.alpha.pulse(0.1, 1000, 1), type="l")
+```
 
 ---
 ### **do.dual.exp.pulse**
@@ -104,7 +106,9 @@ Important: The condition tau1 < tau2 must be satisfied.
 A floating-point vector of length `t.max`$\times$`fs`
 
 #### **Example**
+```r
 plot(do.dual.exp.pulse(0.01, 0.1, 1000, 1), type="l")
+```
 
 ---
 ### **unitE**
@@ -126,4 +130,9 @@ unitE(`v`, `outputE`)
 A floating-point vector with the same length as the input vector.
 
 #### **Example**
-plot(do.dual.exp.pulse(0.01, 0.1, 1000, 1), type="l")
+```r
+# Let's generate an alpha pulse with init energy
+pulse <- unitE(do.alpha.pulse(0.1, 1000, 1))
+# and a second pulse
+pulse2 <- unitE(do.alpha.pulse(0.1, 1000, 1), 2)
+```
