@@ -51,23 +51,24 @@ git clone https://github.com/your_username/psi-analysis.git
 | plot.Psi.matrix    | Displays the Psi matrix using a parameterizable pseudocolor scale. |
 | map.vector         | Rescales a vector to a specified length using proportional mapping. |
 
----
-do.alpha.pulse
----
-Description
+### **do.alpha.pulse**
+
+#### **Description**
 Generates an alpha function vector defined by the equation:
 ```math
 \frac{t}{\tau} \, e^{1 - \frac{t}{\tau}}
 ```
-This function is widely used for modeling neuronal activation waveforms, including simulations of synaptic conductances and other time-dependent neural processes. It computes values for a time vector sampled at a specified rate `fs` (samples per second) during `t.max` (seconds).
+This function is widely used for modeling neuronal activation waveforms, including simulations of synaptic conductances and other time-dependent neural processes.
 
-Usage
+#### **Usage**
 do.alpha.pulse(`tau`, `fs`, `t.max`)
 
-Arguments
-`tau` : time constant $\tau$ (seconds)
-`fs` : sampling rate (samples per second)
-`t.max` : time length (seconds) 
+#### **Arguments**
+| Argument | Description |  
+|----------|-------------|
+| `tau`    | Time constant $\tau$ in seconds |
+| `fs`     | Sampling rate (samples per second) |
+| `t.max`  | Time length in seconds |
 
-Value
-a floating point vector of length `t.max`$\times$`fs`
+#### **Value**
+A floating-point vector of length `t.max`$\times$`fs`
