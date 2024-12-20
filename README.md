@@ -55,12 +55,9 @@ git clone https://github.com/your_username/psi-analysis.git
 do.alpha.pulse
 ---
 Description
+Generates an alpha function vector defined by the equation:
 ```math
 \frac{t}{\tau} \, e^{1 - \frac{t}{\tau}}
-```
-
-```math
-\frac{t}{\tau} exp(1 - \frac{t}{\tau})
 ```
 
 Usage
