@@ -74,6 +74,9 @@ do.alpha.pulse(`tau`, `fs`, `t.max`)
 #### **Value**
 A floating-point vector of length `t.max`$\times$`fs`
 
+#### **Example**
+plot(do.alpha.pulse(0.1, 1000, 1), type="l")
+
 ---
 ### **do.dual.exp.pulse**
 ---
@@ -83,6 +86,8 @@ Generates a dual-exponential function vector defined by the equation:
 \frac{\tau_1\tau_2}{\tau_1 + \tau_2} \, (e^{-\frac{t}{\tau_2}} - e^{-\frac{t}{\tau_1}})
 ```
 This function is widely used for modeling neuronal activation waveforms, including simulations of synaptic conductances and other time-dependent neural processes.
+
+Important: The condition tau1 < tau2 must be satisfied.
 
 #### **Usage**
 do.dual.exp.pulse(`tau1`, `tau2`, `fs`, `t.max`)
@@ -97,3 +102,6 @@ do.dual.exp.pulse(`tau1`, `tau2`, `fs`, `t.max`)
 
 #### **Value**
 A floating-point vector of length `t.max`$\times$`fs`
+
+#### **Example**
+plot(do.dual.exp.pulse(0.01, 0.1, 1000, 1), type="l")
