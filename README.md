@@ -85,12 +85,13 @@ Generates a dual-exponential function vector defined by the equation:
 This function is widely used for modeling neuronal activation waveforms, including simulations of synaptic conductances and other time-dependent neural processes.
 
 #### **Usage**
-do.alpha.pulse(`tau`, `fs`, `t.max`)
+do.dual.exp.pulse(`tau1`, `tau2`, `fs`, `t.max`)
 
 #### **Arguments**
 | Argument | Description |  
 |----------|-------------|
-| `tau`    | Time constant $\tau$ in seconds |
+| `tau1`    | Time constant controlling the rising phase (seconds) |
+| `tau2`    | Time constant controlling the falling phase (seconds) |
 | `fs`     | Sampling rate (samples per second) |
 | `t.max`  | Time length in seconds |
 
