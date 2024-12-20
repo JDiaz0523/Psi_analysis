@@ -87,8 +87,6 @@ Generates a dual-exponential function vector defined by the equation:
 ```
 This function is widely used for modeling neuronal activation waveforms, including simulations of synaptic conductances and other time-dependent neural processes.
 
-Important: The condition tau1 < tau2 must be satisfied.
-
 #### **Usage**
 do.dual.exp.pulse(`tau1`, `tau2`, `fs`, `t.max`)
 
@@ -99,6 +97,7 @@ do.dual.exp.pulse(`tau1`, `tau2`, `fs`, `t.max`)
 | `tau2`    | Time constant controlling the falling phase (seconds) |
 | `fs`     | Sampling rate (samples per second) |
 | `t.max`  | Time length in seconds |
+Important: The condition tau1 < tau2 must be satisfied.
 
 #### **Value**
 A floating-point vector of length `t.max`$\times$`fs`
