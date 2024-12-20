@@ -46,7 +46,7 @@ git clone https://github.com/your_username/psi-analysis.git
 | [unitE](#unite)              | Rescales a vector to unit energy (default), or to any other arbitrary value. |
 | [var.delay](#vardelay)          | Computes the variance of a signal after subtracting delayed copies of itself. |
 | [neg.diff.ACF](#negdiffACF)       | Computes the negative derivative of the autocovariance function. |
-| epoch.feature      | Divides a signal into epochs and evaluates a feature according to a given function. |
+| [epoch.feature](#epochfeature)      | Divides a signal into epochs and evaluates a feature according to a given function. |
 | specular.ext       | Extends a vector by mirroring its ends.                     |
 | plot.Psi.matrix    | Displays the Psi matrix using a parameterizable pseudocolor scale. |
 | map.vector         | Rescales a vector to a specified length using proportional mapping. |
@@ -194,4 +194,38 @@ A numeric vector with length `max.delay`.
 ```r
 # Following eq. 12 (ref), Psi can be numerically calculated as 
 Psi <- neg.diff.ACF(signal, max.delay)
+```
+
+---------------------------------------------------------------------------------------
+### **epoch.feature**
+---
+#### **Description**
+Computes the negative derivative of the autocovariance function.
+
+#### **Usage**
+```r
+epoch.feature(signal, epoch.length, epoch.overlap, fs, func)
+```
+
+#### **Arguments**
+| Argument | Description |  
+|----------|-------------|
+| `signal`    | A numeric vector representing the input signal. |
+| `epoch.length`   | Maximum delay to evaluate the variance. |
+| `epoch.overlap`   | Maximum delay to evaluate the variance. |
+| `fs`   | Sampling rate. |
+| `func`   | The function that computes the feature per epoch. |
+
+#### **Value**
+A numeric vector with length `max.delay`.
+
+#### **Example**
+```r
+# Calculates a moving average of a given signal divided into epochs with 50% overlap,
+# the function mean returns a single value per epoch hence moving.average is a vector.
+moving.average <- epoch.feature(signal, epoch.length, epoch.length/2, fs, mean)
+
+# --- Calculates EEG Psi-matrix (4-second epochs, 50% overlap) provided an EEG signal sampled at 5kHz.
+# In this case, as neg.diff.ACF returns a vector, EEG_Psi_matrix is a matrix.
+EEG_Psi_matrix <- epoch.feature(EEG, 4, 2, 5000, function(epoch) neg.diff.ACF(epoch, max.delay))
 ```
