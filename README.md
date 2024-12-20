@@ -43,7 +43,7 @@ git clone https://github.com/your_username/psi-analysis.git
 |--------------------|-------------------------------------------------------------|
 | [do.alpha.pulse](#doalphapulse)     | Generates an alpha function vector given the $\tau$ parameter. |
 | [do.dual.exp.pulse](#dodualexppulse)  | Generates a dual-exponential function vector given $\tau_1$ and $\tau_2$ parameters. |
-| unitE              | Rescales a vector to unit energy (default), or to any other arbitrary value. |
+| [unitE](#unite)              | Rescales a vector to unit energy (default), or to any other arbitrary value. |
 | var.delay          | Computes the variance of a signal after subtracting delayed copies of itself. |
 | neg.diff.ACF       | Computes the negative derivative of the autocovariance function. |
 | epoch.feature      | Divides a signal into epochs and evaluates a feature according to a given function. |
@@ -63,7 +63,7 @@ This function is widely used for modeling neuronal activation waveforms, includi
 
 #### **Usage**
 ```r
-do.alpha.pulse(`tau`, `fs`, `t.max`)
+do.alpha.pulse(tau, fs, t.max)
 ```
 
 #### **Arguments**
@@ -93,7 +93,7 @@ This function is widely used for modeling neuronal activation waveforms, includi
 
 #### **Usage**
 ```r
-do.dual.exp.pulse(`tau1`, `tau2`, `fs`, `t.max`)
+do.dual.exp.pulse(tau1, tau2, fs, t.max)
 ```
 
 #### **Arguments**
