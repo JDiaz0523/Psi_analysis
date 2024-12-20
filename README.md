@@ -97,6 +97,7 @@ do.dual.exp.pulse(`tau1`, `tau2`, `fs`, `t.max`)
 | `tau2`    | Time constant controlling the falling phase (seconds) |
 | `fs`     | Sampling rate (samples per second) |
 | `t.max`  | Time length in seconds |
+
 Important: The condition tau1 < tau2 must be satisfied.
 
 #### **Value**
