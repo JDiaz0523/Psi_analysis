@@ -62,14 +62,16 @@ Generates an alpha function vector defined by the equation:
 This function is widely used for modeling neuronal activation waveforms, including simulations of synaptic conductances and other time-dependent neural processes.
 
 #### **Usage**
+```r
 do.alpha.pulse(`tau`, `fs`, `t.max`)
+```
 
 #### **Arguments**
 | Argument | Description |  
 |----------|-------------|
-| `tau`    | Time constant $\tau$ in seconds |
-| `fs`     | Sampling rate (samples per second) |
-| `t.max`  | Time length in seconds |
+| `tau`    | Time constant $\tau$ in seconds. |
+| `fs`     | Sampling rate (samples per second). |
+| `t.max`  | Time length in seconds. |
 
 #### **Value**
 A floating-point vector of length `t.max`$\times$`fs`
@@ -90,15 +92,17 @@ Generates a dual-exponential function vector defined by the equation:
 This function is widely used for modeling neuronal activation waveforms, including simulations of synaptic conductances and other time-dependent neural processes.
 
 #### **Usage**
+```r
 do.dual.exp.pulse(`tau1`, `tau2`, `fs`, `t.max`)
+```
 
 #### **Arguments**
 | Argument | Description |  
 |----------|-------------|
-| `tau1`    | Time constant controlling the rising phase (seconds) |
-| `tau2`    | Time constant controlling the falling phase (seconds) |
-| `fs`     | Sampling rate (samples per second) |
-| `t.max`  | Time length in seconds |
+| `tau1`    | Time constant controlling the rising phase (seconds). |
+| `tau2`    | Time constant controlling the falling phase (seconds). |
+| `fs`     | Sampling rate (samples per second). |
+| `t.max`  | Time length in seconds. |
 
 Important: The condition tau1 < tau2 must be satisfied.
 
@@ -114,25 +118,27 @@ plot(do.dual.exp.pulse(0.01, 0.1, 1000, 1), type="l")
 ### **unitE**
 ---
 #### **Description**
-Generates a dual-exponential function vector defined by the equation:
-This function is widely used for modeling neuronal activation waveforms, including simulations of synaptic conductances and other time-dependent neural processes.
+scales an input vector to acquire init energy, by default, or any other energy value specified by `outputE`.
 
 #### **Usage**
-unitE(`v`, `outputE`)
+```r
+unitE(v, outputE = 1)
+```
 
 #### **Arguments**
 | Argument | Description |  
 |----------|-------------|
-| `v`    | Vector representing the input signal |
-| `outputE`    | Intended energy of the output (1 by defaut) |
+| `v`    | A numeric vector representing the input signal. |
+| `outputE`   | IThe desired energy of the output vector (default is 1). |
 
 #### **Value**
-A floating-point vector with the same length as the input vector.
+A numeric vector with the same length as the input vector, scaled to the specified energy.
 
 #### **Example**
 ```r
-# Let's generate an alpha pulse with init energy
+# Scale an alpha pulse to unit energy
 pulse <- unitE(do.alpha.pulse(0.1, 1000, 1))
-# and a second pulse
-pulse2 <- unitE(do.alpha.pulse(0.1, 1000, 1), 2)
+
+# Scale another alpha pulse to have an energy of 2
+pulse2 <- unitE(do.alpha.pulse(0.1, 1000, 1), outputE = 2)
 ```
