@@ -118,7 +118,7 @@ plot(do.dual.exp.pulse(0.01, 0.1, 1000, 1), type="l")
 ### **unitE**
 ---
 #### **Description**
-scales an input vector to acquire init energy, by default, or any other energy value specified by `outputE`.
+Scales an input vector to achieve unit energy (by default) or any other energy value specified by `outputE`.
 
 #### **Usage**
 ```r
