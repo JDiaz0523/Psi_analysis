@@ -45,7 +45,7 @@ git clone https://github.com/your_username/psi-analysis.git
 | [do.dual.exp.pulse](#dodualexppulse)  | Generates a dual-exponential function vector given $\tau_1$ and $\tau_2$ parameters. |
 | [unitE](#unite)              | Rescales a vector to unit energy (default), or to any other arbitrary value. |
 | [var.delay](#vardelay)          | Computes the variance of a signal after subtracting delayed copies of itself. |
-| neg.diff.ACF       | Computes the negative derivative of the autocovariance function. |
+| [neg.diff.ACF](#negdiffACF)       | Computes the negative derivative of the autocovariance function. |
 | epoch.feature      | Divides a signal into epochs and evaluates a feature according to a given function. |
 | specular.ext       | Extends a vector by mirroring its ends.                     |
 | plot.Psi.matrix    | Displays the Psi matrix using a parameterizable pseudocolor scale. |
