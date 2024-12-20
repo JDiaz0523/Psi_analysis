@@ -122,13 +122,13 @@ Scales an input vector to achieve unit energy (by default) or any other energy v
 
 #### **Usage**
 ```r
-unitE(v, outputE = 1)
+unitE(signal, outputE = 1)
 ```
 
 #### **Arguments**
 | Argument | Description |  
 |----------|-------------|
-| `v`    | A numeric vector representing the input signal. |
+| `signal`    | A numeric vector representing the input signal. |
 | `outputE`   | The desired energy of the output vector (default is 1). |
 
 #### **Value**
@@ -141,4 +141,30 @@ pulse <- unitE(do.alpha.pulse(0.1, 1000, 1))
 
 # Scale another instance of the alpha pulse to achieve an energy of 2.
 pulse2 <- unitE(do.alpha.pulse(0.1, 1000, 1), outputE = 2)
+```
+
+---------------------------------------------------------------------------------------
+### **var.delay**
+---
+#### **Description**
+Calculates the variance of a given signal after subtracting progressively delayed copies of itself.
+
+#### **Usage**
+```r
+var.delay(signal, max.delay)
+```
+
+#### **Arguments**
+| Argument | Description |  
+|----------|-------------|
+| `signal`    | A numeric vector representing the input signal. |
+| `max.delay`   | Maximum delay to evaluate the variance. |
+
+#### **Value**
+A numeric vector with length `max.delay` + 1 (a zero value is added as the fist element, corresponding to the expected zero variance at zero delay).
+
+#### **Example**
+```r
+# Following eq. 11 (ref), Psi can be numerically calculated as 
+Psi <- diff(var.delay(signal, max.delay))/2
 ```
