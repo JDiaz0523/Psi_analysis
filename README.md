@@ -48,7 +48,7 @@ git clone https://github.com/your_username/psi-analysis.git
 | [neg.diff.ACF](#negdiffACF)       | Computes the negative derivative of the autocovariance function. |
 | [epoch.feature](#epochfeature)      | Divides a signal into epochs and evaluates a feature according to a given function. |
 | [specular.ext](#specularext)       | Extends a vector by mirroring its ends. |
-| plot.Psi.matrix    | Displays the Psi matrix using a custom pseudocolor scale. |
+| [plot.Psi.matrix](#plotPsimatrix)    | Displays the Psi matrix using a custom pseudocolor scale. |
 | [map.vector](#mapvector)         | Rescales a vector to a specified length using proportional mapping. |
 
 ---------------------------------------------------------------------------------------
