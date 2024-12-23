@@ -147,7 +147,7 @@ pulse2 <- unitE(do.alpha.pulse(0.1, 1000, 1), outputE = 2)
 ### **var.delay**
 ---
 #### **Description**
-Calculates the variance of a given signal after subtracting progressively delayed copies of itself.
+Calculates the variance of a given signal after subtracting progressively delayed copies of itself. This function, corresponding to the variance of $\hat{X}$ (ref, Eq. 4), is primarily intended for demonstrating mathematical concepts through numerical methods (see Notes below).
 
 #### **Usage**
 ```r
@@ -158,17 +158,22 @@ var.delay(signal, max.delay)
 | Argument | Description |  
 |----------|-------------|
 | `signal`    | A numeric vector representing the input signal. |
-| `max.delay`   | Maximum delay to evaluate the variance. |
+| `max.delay`   | The maximum delay to evaluate the variance. |
 
 #### **Value**
-A numeric vector with length `max.delay` + 1 (a zero value is added as the fist element, corresponding to the expected zero variance at zero delay).
+A numeric vector of length max.delay + 1. The first element is zero, corresponding to the expected zero variance at zero delay.
 
 #### **Example**
 ```r
-# Following eq. 11 (ref), Psi can be numerically calculated as 
+# Following Equation 11 (ref), Psi can be numerically calculated as:
 Psi <- diff(var.delay(signal, max.delay))/2
 ```
-Important: This function operates slowly in R and is only useful for demonstrations, such as numerically illustrating the equivalence of equations 11 and 12 (ref), which is supported by equation 9 (see demo script 2). To enhance performance, use the function 'neg.diff.ACF' to calculate Psi, which is based on the optimized function acf.
+
+Notes
+
+- This function operates slowly in R (an interpreted language) and is intended only for demonstrations, such as numerically illustrating the equivalence of Equations 11 and 12 (ref), supported by Equation 9 (see demo script 2).
+
+- For improved performance, use the neg.diff.ACF function, which calculates Psi efficiently by leveraging the optimized acf function.
 
 ---------------------------------------------------------------------------------------
 ### **neg.diff.ACF**
