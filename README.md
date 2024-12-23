@@ -224,8 +224,7 @@ epoch.feature(signal, epoch.length, epoch.overlap, fs, func)
 Details
 
 1. The signal is divided into overlapping epochs based on epoch.length and epoch.overlap.
-2. For each epoch:
-- The indices of the epoch are computed, accounting for overlap.
+2. For each epoch: - The indices of the epoch are computed, accounting for overlap.
 - Out-of-bound indices are handled gracefully using specular.ext to reflect signal boundaries.
 - The specified function (func) is applied to the sub-signal corresponding to the epoch.
 3. Progress is displayed via a progress bar (txtProgressBar).
