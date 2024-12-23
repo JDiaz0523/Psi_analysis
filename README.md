@@ -338,8 +338,19 @@ plot.Psi.matrix(psi.matrix, win.width = NULL, off=0,
 #### **Arguments**
 | Argument | Description |  
 |----------|-------------|
-| `v`    | A numeric or categorical vector representing the input data (e.g., hypnogram stages). |
-| `new.length`   | The desired length of the resampled vector. |
+| `psi.matrix`    | -- |
+| `win.width`   | -- |
+| `off`   | -- |
+| `col.grad1`   | -- |
+| `col.grad2`   | -- |
+| `grad.ratio`   | -- |
+| `x.d`   | -- |
+| `xl`   | -- |
+| `y.d`   | -- |
+| `yl`   | -- |
+| `auto.col.lim`   | -- |
+| `plot.mar`   | -- |
+| `col.limits`   | -- |
 
 #### **Value**
 A vector of length new.length containing resampled elements from v, preserving the unique categories and their relative order.
