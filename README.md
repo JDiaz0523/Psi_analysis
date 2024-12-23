@@ -173,7 +173,7 @@ Notes
 
 - This function operates slowly in R (an interpreted language) and is intended only for demonstrations, such as numerically illustrating the equivalence of Equations 11 and 12 (ref), supported by Equation 9 (see demo script 2).
 
-- For improved performance, use the neg.diff.ACF function, which calculates Psi efficiently by leveraging the optimized acf function.
+- For improved performance, use the neg.diff.ACF function, which calculates Psi efficiently by leveraging the optimized `acf` function.
 
 ---------------------------------------------------------------------------------------
 ### **neg.diff.ACF**
