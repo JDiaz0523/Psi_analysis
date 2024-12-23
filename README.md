@@ -224,13 +224,14 @@ epoch.feature(signal, epoch.length, epoch.overlap, fs, func)
 Details
 
 1. The signal is divided into overlapping epochs based on epoch.length and epoch.overlap.
-2. For each epoch: - The indices of the epoch are computed, accounting for overlap.
-- Out-of-bound indices are handled gracefully using specular.ext to reflect signal boundaries.
-- The specified function (func) is applied to the sub-signal corresponding to the epoch.
+2. For each epoch:
+* The indices of the epoch are computed, accounting for overlap.
+* Out-of-bound indices are handled gracefully using specular.ext to reflect signal boundaries.
+* The specified function (func) is applied to the sub-signal corresponding to the epoch.
 3. Progress is displayed via a progress bar (txtProgressBar).
 4. The output adapts to the dimensionality of the features:
-- If func returns a scalar (e.g., mean), the output is a vector.
-- If func returns a vector (e.g., neg.diff.ACF), the output is a matrix where rows correspond to epochs.
+* If func returns a scalar (e.g., mean), the output is a vector.
+* If func returns a vector (e.g., neg.diff.ACF), the output is a matrix where rows correspond to epochs.
 
 #### **Value**
 - A numeric vector if the feature function returns a scalar.
