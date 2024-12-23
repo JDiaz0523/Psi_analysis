@@ -292,10 +292,20 @@ Details
 
 #### **Example**
 ```r
-# Example: Resampling a wake-sleep stages vector
-# If `score.10s.24h` is a categorized vector of wake-sleep stages for 10-second epochs covering 24 hours,
-# you can map it to 4-second epochs (21600 epochs in 24 hours) as follows:
-score.4s.24h <- map.vector(score.10s.24h, 21600)
+# If we divide a ramp signal with 100 elements (e.g., 1:100) into 10 epochs, 
+# and extend each epoch by 50%, the following indices might arise for the first and last epochs:
+# - The first epoch: c(-4:0, 1:10)
+# - The last epoch: 91:105
+
+# Adjust the first epoch's indices using specular.ext
+adjusted.first.epoch <- specular.ext(c(-4:0, 1:10), lim.sup = 100)
+print(adjusted.first.epoch)
+# Output: c(6, 5, 4, 3, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+# Adjust the last epoch's indices using specular.ext
+adjusted.last.epoch <- specular.ext(91:105, lim.sup = 100)
+print(adjusted.last.epoch)
+# Output: c(91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 99, 98, 97, 96, 95)
 ```
 
 ---------------------------------------------------------------------------------------
