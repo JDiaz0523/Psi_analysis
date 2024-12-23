@@ -241,7 +241,7 @@ Details
 ```r
 # Compute the mean for overlapping epochs (a moving average).
 # The function `mean` returns a scalar value for each epoch.
-# Signal (5kHz) divided into 4-second epochs with 2-second overlap.
+# Signal (5kHz) is divided into 4-second epochs with 2-second overlap.
 moving.average <- epoch.feature(
   signal = EEG, 
   epoch.length = 4, 
