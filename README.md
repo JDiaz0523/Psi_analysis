@@ -284,8 +284,7 @@ map.vector(v, new.length)
 | `new.length`   | xxxx. |
 
 #### **Value**
-xxx.
-
+A numeric vector of length `new.length`.
 #### **Example**
 ```r
 # comments
