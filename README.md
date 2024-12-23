@@ -270,7 +270,7 @@ Psi.matrix <- epoch.feature(
 ### **map.vector**
 ---
 #### **Description**
-Resamples a vector to a specified length by mapping original indices proportionally.
+Resamples a categorized numeric vector (e.g., hypnograms) to a specified length by proportionally mapping its original indices. This ensures the resampled vector retains the original categories and their relative distribution.
 
 #### **Usage**
 ```r
@@ -280,13 +280,16 @@ map.vector(v, new.length)
 #### **Arguments**
 | Argument | Description |  
 |----------|-------------|
-| `v`    | A numerical vector. |
-| `new.length`   | xxxx. |
+| `v`    | A numeric or categorical vector representing the input data (e.g., hypnogram stages). |
+| `new.length`   | The desired length of the resampled vector. |
 
 #### **Value**
-A numeric vector of length `new.length`.
+A vector of length new.length containing resampled elements from v, preserving the unique categories and their relative order.
+
 #### **Example**
 ```r
-# comments
+# Example: Resampling a wake-sleep stages vector
+# If `score.10s.24h` is a categorized vector of wake-sleep stages for 10-second epochs covering 24 hours,
+# you can map it to 4-second epochs (21600 epochs in 24 hours) as follows:
 score.4s.24h <- map.vector(score.10s.24h, 21600)
 ```
