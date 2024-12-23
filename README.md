@@ -47,8 +47,8 @@ git clone https://github.com/your_username/psi-analysis.git
 | [var.delay](#vardelay)          | Computes the variance of a signal after subtracting delayed copies of itself. |
 | [neg.diff.ACF](#negdiffACF)       | Computes the negative derivative of the autocovariance function. |
 | [epoch.feature](#epochfeature)      | Divides a signal into epochs and evaluates a feature according to a given function. |
-| specular.ext       | Extends a vector by mirroring its ends.                     |
-| plot.Psi.matrix    | Displays the Psi matrix using a parameterizable pseudocolor scale. |
+| specular.ext       | Extends a vector by mirroring its ends. |
+| plot.Psi.matrix    | Displays the Psi matrix using a custom pseudocolor scale. |
 | map.vector         | Rescales a vector to a specified length using proportional mapping. |
 
 ---------------------------------------------------------------------------------------
@@ -255,7 +255,8 @@ moving.average <- epoch.feature(
 # Each epoch spans 4 seconds with 50% overlap (2 seconds).
 # As `neg.diff.ACF` requires an additional argument (`max.delay`), 
 # wrapping it in an anonymous function is one effective way to pass it to `func`.
-# The result `Psi.matrix` is a matrix where each row corresponds to an epoch.Psi.matrix <- epoch.feature(
+# The result `Psi.matrix` is a matrix where each row corresponds to an epoch.
+Psi.matrix <- epoch.feature(
   signal = EEG, 
   epoch.length = 4, 
   epoch.overlap = 2, 
