@@ -309,6 +309,50 @@ print(adjusted.last.epoch)
 ```
 
 ---------------------------------------------------------------------------------------
+### **plot.Psi.matrix**
+---
+#### **Description**
+The `plot.Psi.matrix` function visualizes a Psi-matrix using a dual pseudocolor scale designed to emphasize the significance of zero in the Psi-scale (ref). The function applies two separate color gradients—one for negative values and another for positive values—that meet seamlessly at zero with a shared black color. This ensures clear visual differentiation of positive and negative regions in the matrix.
+
+To accommodate the expected distribution of Psi-values (mostly positive), the positive color gradient spans a broader range and includes more levels of colors, as defined by the grad.ratio parameter (typically at least three times the span of the negative range).
+
+Key features include:
+
+- Customizable Color Gradients: User-specified color scales for negative and positive values, with seamless blending at zero.
+- Windowing: Flexible options to plot a subsection of the Psi-matrix using adjustable window width and offsets.
+- Dynamic or Manual Scaling: Automatically adjusts color limits based on data quantiles or uses user-defined limits for consistent scaling across plots.
+- Axis Configuration: Customizable x and y-axis labels, units, and scaling tailored to Psi-matrix data.
+
+This function is particularly suited for the visualization of EEG Psi-pattern dynamics.
+
+
+#### **Usage**
+```r
+plot.Psi.matrix(psi.matrix, win.width = NULL, off=0,
+col.grad1 = c(rgb(0.5,0,0), rgb(0,0,0)), 
+col.grad2 = c(rgb(0,0,0), rgb(0,0,1), rgb(0.5,0.5,1), rgb(0,1,1)),
+grad.ratio = 3, x.d = 4/3600, xl="time (hours)", y.d = 1/5, yl="time (ms)",
+auto.col.lim = 0.975, plot.mar = c(4,4,2,1), col.limits = NULL)
+```
+
+#### **Arguments**
+| Argument | Description |  
+|----------|-------------|
+| `v`    | A numeric or categorical vector representing the input data (e.g., hypnogram stages). |
+| `new.length`   | The desired length of the resampled vector. |
+
+#### **Value**
+A vector of length new.length containing resampled elements from v, preserving the unique categories and their relative order.
+
+#### **Example**
+```r
+# Example: Resampling a wake-sleep stages vector
+# If `score.10s.24h` is a categorized vector of wake-sleep stages for 10-second epochs covering 24 hours,
+# you can map it to 4-second epochs (21600 epochs in 24 hours) as follows:
+score.4s.24h <- map.vector(score.10s.24h, 21600)
+```
+
+---------------------------------------------------------------------------------------
 ### **map.vector**
 ---
 #### **Description**
