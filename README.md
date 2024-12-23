@@ -230,7 +230,7 @@ Details
 * The specified function (func) is applied to the sub-signal corresponding to the epoch.
 3. Progress is displayed via a progress bar (txtProgressBar).
 4. The output adapts to the dimensionality of the features:
-* If func returns a scalar (e.g., mean), the output is a vector.
+* If func returns a scalar, the output is a vector.
 * If func returns a vector (e.g., neg.diff.ACF), the output is a matrix where rows correspond to epochs.
 
 #### **Value**
