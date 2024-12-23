@@ -234,15 +234,28 @@ Details
 - If func returns a vector (e.g., neg.diff.ACF), the output is a matrix where rows correspond to epochs.
 
 #### **Value**
-A numeric vector with length `max.delay`.
+- A numeric vector if the feature function returns a scalar.
+- A numeric matrix if the feature function returns a vector, with each row corresponding to an epoch.
 
 #### **Example**
 ```r
-# Calculates a moving average of a given signal divided into epochs with 50% overlap,
-# the function mean returns a single value per epoch hence moving.average is a vector.
-moving.average <- epoch.feature(signal, epoch.length, epoch.length/2, fs, mean)
+# Compute the mean for overlapping epochs
+# Signal divided into 4-second epochs with 2-second overlap
+moving.average <- epoch.feature(
+  signal = EEG, 
+  epoch.length = 4, 
+  epoch.overlap = 2, 
+  fs = 500, 
+  func = mean
+)
 
-# --- Calculates EEG Psi-matrix (4-second epochs, 50% overlap) provided an EEG signal sampled at 5kHz.
-# In this case, as neg.diff.ACF returns a vector, EEG_Psi_matrix is a matrix.
-EEG_Psi_matrix <- epoch.feature(EEG, 4, 2, 5000, function(epoch) neg.diff.ACF(epoch, max.delay))
+# Compute a Psi-matrix for EEG data using neg.diff.ACF as the feature function
+# Each epoch spans 4 seconds with 50% overlap (2 seconds)
+Psi.matrix <- epoch.feature(
+  signal = EEG, 
+  epoch.length = 4, 
+  epoch.overlap = 2, 
+  fs = 5000, 
+  func = function(epoch) neg.diff.ACF(epoch, max.delay = 100)
+)
 ```
