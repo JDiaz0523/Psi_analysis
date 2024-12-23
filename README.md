@@ -179,7 +179,7 @@ Notes
 ### **neg.diff.ACF**
 ---
 #### **Description**
-Computes the negative derivative of the autocovariance function.
+Computes the negative derivative of the autocovariance function using the built-in R function `acf`.
 
 #### **Usage**
 ```r
@@ -190,14 +190,14 @@ neg.diff.ACF(signal, max.delay)
 | Argument | Description |  
 |----------|-------------|
 | `signal`    | A numeric vector representing the input signal. |
-| `max.delay`   | Maximum delay to evaluate the variance. |
+| `max.delay`   | The maximum delay (lag) for which the negative derivative is computed. |
 
 #### **Value**
-A numeric vector with length `max.delay`.
+A numeric vector of length `max.delay`, representing the negative derivative values of the autocovariance function at each delay.
 
 #### **Example**
 ```r
-# Following eq. 12 (ref), Psi can be numerically calculated as 
+# Following Equation 12 (ref), Psi can be numerically calculated as:
 Psi <- neg.diff.ACF(signal, max.delay)
 ```
 
@@ -205,7 +205,7 @@ Psi <- neg.diff.ACF(signal, max.delay)
 ### **epoch.feature**
 ---
 #### **Description**
-Computes the negative derivative of the autocovariance function.
+Divides a signal into overlapping epochs and computes features for each epoch using a user-specified function. This method is highly versatile, supporting both scalar and vector-based feature extraction, making it suitable for various time-series analysis applications.
 
 #### **Usage**
 ```r
@@ -216,10 +216,22 @@ epoch.feature(signal, epoch.length, epoch.overlap, fs, func)
 | Argument | Description |  
 |----------|-------------|
 | `signal`    | A numeric vector representing the input signal. |
-| `epoch.length`   | Maximum delay to evaluate the variance. |
-| `epoch.overlap`   | Maximum delay to evaluate the variance. |
-| `fs`   | Sampling rate. |
-| `func`   | The function that computes the feature per epoch. |
+| `epoch.length`   | The duration of each epoch (in seconds). |
+| `epoch.overlap`   | The overlap between consecutive epochs (in seconds). |
+| `fs`   | The input signal's sampling rate (samples per second). |
+| `func`   | A user-defined function applied to each epoch. This function can return either a scalar or a vector. |
+
+Details
+
+1. The signal is divided into overlapping epochs based on epoch.length and epoch.overlap.
+2. For each epoch:
+- The indices of the epoch are computed, accounting for overlap.
+- Out-of-bound indices are handled gracefully using specular.ext to reflect signal boundaries.
+- The specified function (func) is applied to the sub-signal corresponding to the epoch.
+3. Progress is displayed via a progress bar (txtProgressBar).
+4. The output adapts to the dimensionality of the features:
+- If func returns a scalar (e.g., mean), the output is a vector.
+- If func returns a vector (e.g., neg.diff.ACF), the output is a matrix where rows correspond to epochs.
 
 #### **Value**
 A numeric vector with length `max.delay`.
