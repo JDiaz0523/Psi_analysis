@@ -49,7 +49,7 @@ git clone https://github.com/your_username/psi-analysis.git
 | [epoch.feature](#epochfeature)      | Divides a signal into epochs and evaluates a feature according to a given function. |
 | specular.ext       | Extends a vector by mirroring its ends. |
 | plot.Psi.matrix    | Displays the Psi matrix using a custom pseudocolor scale. |
-| map.vector         | Rescales a vector to a specified length using proportional mapping. |
+| [map.vector](#mapvector)         | Rescales a vector to a specified length using proportional mapping. |
 
 ---------------------------------------------------------------------------------------
 ### **do.alpha.pulse**
