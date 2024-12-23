@@ -47,7 +47,7 @@ git clone https://github.com/your_username/psi-analysis.git
 | [var.delay](#vardelay)          | Computes the variance of a signal after subtracting delayed copies of itself. |
 | [neg.diff.ACF](#negdiffACF)       | Computes the negative derivative of the autocovariance function. |
 | [epoch.feature](#epochfeature)      | Divides a signal into epochs and evaluates a feature according to a given function. |
-| specular.ext       | Extends a vector by mirroring its ends. |
+| [specular.ext](#specularext)       | Extends a vector by mirroring its ends. |
 | plot.Psi.matrix    | Displays the Psi matrix using a custom pseudocolor scale. |
 | [map.vector](#mapvector)         | Rescales a vector to a specified length using proportional mapping. |
 
@@ -294,11 +294,11 @@ Details
 ```r
 # If we divide a ramp signal with 100 elements (e.g., 1:100) into 10 epochs, 
 # and extend each epoch by 50%, the following indices might arise for the first and last epochs:
-# - The first epoch: c(-4:0, 1:10)
+# - The first epoch: -4:10
 # - The last epoch: 91:105
 
 # Adjust the first epoch's indices using specular.ext
-adjusted.first.epoch <- specular.ext(c(-4:0, 1:10), lim.sup = 100)
+adjusted.first.epoch <- specular.ext(-4:10, lim.sup = 100)
 print(adjusted.first.epoch)
 # Output: c(6, 5, 4, 3, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 
