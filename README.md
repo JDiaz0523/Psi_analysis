@@ -239,23 +239,28 @@ Details
 
 #### **Example**
 ```r
-# Compute the mean for overlapping epochs
-# Signal divided into 4-second epochs with 2-second overlap
+# Compute the mean for overlapping epochs (a moving average).
+# The function `mean` returns a scalar value for each epoch.
+# Signal (5kHz) divided into 4-second epochs with 2-second overlap.
 moving.average <- epoch.feature(
   signal = EEG, 
   epoch.length = 4, 
   epoch.overlap = 2, 
-  fs = 500, 
+  fs = 5000, 
   func = mean
 )
 
-# Compute a Psi-matrix for EEG data using neg.diff.ACF as the feature function
-# Each epoch spans 4 seconds with 50% overlap (2 seconds)
+# Compute a Psi-matrix for EEG data using `neg.diff.ACF` as the feature function.
+# Each epoch spans 4 seconds with 50% overlap (2 seconds).
+# As `neg.diff.ACF` requires an additional argument (`max.delay`), it must be wrapped
+# in an anonymous function to pass it to `func`.
+# The result `Psi.matrix` is a matrix where each row corresponds to an epoch.
 Psi.matrix <- epoch.feature(
   signal = EEG, 
   epoch.length = 4, 
   epoch.overlap = 2, 
   fs = 5000, 
-  func = function(epoch) neg.diff.ACF(epoch, max.delay = 100)
+  func = function(epoch) neg.diff.ACF(epoch, max.delay = 1250)
 )
+
 ```
