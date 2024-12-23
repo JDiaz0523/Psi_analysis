@@ -265,3 +265,29 @@ Psi.matrix <- epoch.feature(
 )
 
 ```
+
+---------------------------------------------------------------------------------------
+### **map.vector**
+---
+#### **Description**
+Resamples a vector to a specified length by mapping original indices proportionally.
+
+#### **Usage**
+```r
+map.vector(v, new.length)
+```
+
+#### **Arguments**
+| Argument | Description |  
+|----------|-------------|
+| `v`    | A numerical vector. |
+| `new.length`   | xxxx. |
+
+#### **Value**
+xxx.
+
+#### **Example**
+```r
+# comments
+score.4s.24h <- map.vector(score.10s.24h, 21600)
+```
