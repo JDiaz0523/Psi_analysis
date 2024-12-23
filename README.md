@@ -250,7 +250,6 @@ moving.average <- epoch.feature(
   func = mean
 )
 
-
 # Compute a Psi-matrix for EEG data using `neg.diff.ACF` as the feature function.
 # Each epoch spans 4 seconds with 50% overlap (2 seconds).
 # As `neg.diff.ACF` requires an additional argument (`max.delay`), 
