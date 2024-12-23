@@ -265,6 +265,38 @@ Psi.matrix <- epoch.feature(
 )
 
 ```
+---------------------------------------------------------------------------------------
+### **specular.ext**
+---
+#### **Description**
+Mirrors the boundaries of a signal to handle out-of-bound indices gracefully. This function adjusts indices outside the valid range (1 to `lim.sup`) by reflecting them back into the range, ensuring continuity at the boundaries. When called by the function `epoch.feature`, `lim.sup` corresponds to the length of the signal under analysis.
+
+#### **Usage**
+```r
+specular.ext(K, lim.sup)
+```
+
+#### **Arguments**
+| Argument | Description |  
+|----------|-------------|
+| `K`    | A numeric vector of indices to be adjusted. |
+| `lim.sup`   | The upper limit of the valid range of indices (typically the signal length). |
+
+#### **Value**
+A numeric vector of the same length as `K`, with out-of-bound indices replaced by their mirrored equivalents.
+
+Details
+- For indices less than 1, the function mirrors them around 1.
+- For indices greater than `lim.sup`, the function mirrors them around `lim.sup`.
+- This ensures all returned indices are within the valid range [1,`lim.sup`].
+
+#### **Example**
+```r
+# Example: Resampling a wake-sleep stages vector
+# If `score.10s.24h` is a categorized vector of wake-sleep stages for 10-second epochs covering 24 hours,
+# you can map it to 4-second epochs (21600 epochs in 24 hours) as follows:
+score.4s.24h <- map.vector(score.10s.24h, 21600)
+```
 
 ---------------------------------------------------------------------------------------
 ### **map.vector**
