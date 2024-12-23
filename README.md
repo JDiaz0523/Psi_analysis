@@ -328,10 +328,10 @@ This function is particularly suited for the visualization of EEG Psi-pattern dy
 
 #### **Usage**
 ```r
-plot.Psi.matrix(psi.matrix, win.width = NULL, off=0,
+plot.Psi.matrix(psi.matrix, win.width = NULL, off = 0,
                 col.grad1 = c(rgb(0.5,0,0), rgb(0,0,0)), 
                 col.grad2 = c(rgb(0,0,0), rgb(0,0,1), rgb(0.5,0.5,1), rgb(0,1,1)),
-                grad.ratio = 3, x.d = 4/3600, xl="time (hours)", y.d = 1/5, yl="time (ms)",
+                grad.ratio = 3, x.d = 4/3600, xl = "time (hours)", y.d = 1/5, yl = "time (ms)",
                 auto.col.lim = 0.975, plot.mar = c(4,4,2,1), col.limits = NULL)
 ```
 
@@ -348,9 +348,10 @@ plot.Psi.matrix(psi.matrix, win.width = NULL, off=0,
 | `xl`   | -- |
 | `y.d`   | -- |
 | `yl`   | -- |
+| `col.limits`   | -- |
 | `auto.col.lim`   | -- |
 | `plot.mar`   | -- |
-| `col.limits`   | -- |
+| `num.col`   | -- |
 
 #### **Value**
 A vector of length new.length containing resampled elements from v, preserving the unique categories and their relative order.
