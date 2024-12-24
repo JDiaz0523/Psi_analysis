@@ -358,12 +358,11 @@ Details
   ```r
   q <- quantile(psi.matrix, auto.col.lim, na.rm = TRUE)
   ```
-
-
-- Color scales can be changed. Internally, the function `colorRampPalette` is used to build the color gradients and `col.grad1` and `col.grad1` are passed as arguments to `colorRampPalette`.
-- When autoscaling, the upper limit of the Psi range is determined according to the quantile evaluation `q <- quantile(psi.matrix, auto.col.lim, na.rm = T)`, and The lower limit is `-q/grad.ratio`.
-- Custom visualization for enhanced contrast, etc., can be achieved by analyzing the histogram of `psi.matrix` and choosing adequate values to control the function, e.g. `plot.Psi.matrix(EEG_Psi_matrix, col.limits = c(val1, val2)`.
-
+  The lower limit is calculated as -q/grad.ratio, ensuring the positive and negative ranges are scaled proportionally.
+- **Custom Visualization**. For enhanced contrast or specific visualization needs, users can analyze the histogram of `psi.matrix` and manually define the color scale limits. For example:
+  ```r
+  plot.Psi.matrix(EEG_Psi_matrix, col.limits = c(val1, val2))
+  ```
 
 #### **Value**
 The primary output of the function is the Psi-matrix visualization as a pseudocolor plot.
