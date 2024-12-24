@@ -337,23 +337,23 @@ plot.Psi.matrix(psi.matrix, win.width = NULL, off = 0,
 #### **Arguments**
 | Argument | Description |  
 |----------|-------------|
-| `psi.matrix`    | -- |
-| `win.width`   | -- |
-| `off`   | -- |
-| `col.grad1`   | -- |
-| `col.grad2`   | -- |
-| `grad.ratio`   | -- |
-| `x.d`   | -- |
-| `xl`   | -- |
-| `y.d`   | -- |
-| `yl`   | -- |
-| `col.limits`   | -- |
-| `auto.col.lim`   | -- |
-| `plot.mar`   | -- |
-| `num.col`   | -- |
+| `psi.matrix`    | A Psi-matrix, where each row corresponds to a Psi-pattern. |
+| `win.width`   | The number of rows (epochs) to be visualized in the plot. If set to `NULL` (default), the entire matrix is plotted.|
+| `off`   | Time offset (number of epochs) used alongside `win.width` to visualize a specific submatrix of `psi.matrix`.|
+| `col.grad1`   | Color gradient representing the negative range of the Psi-scale. Default: [dark-red → black].|
+| `col.grad2`   | Color gradient representing the positive range of the Psi-scale. Default: [black → blue → light-blue → cyan]. |
+| `num.col`   | Total number of color levels across `col.grad1` and `col.grad2`. Default: `num.col = 512`. |
+| `grad.ratio`   | Ratio of positive (`col.grad2`) to negative (`col.grad1`) color levels. Default: `grad.ratio = 3`, empirically adjusted for the Psi-scale distribution. |
+| `x.d`   | Scaling factor for the temporal axis. Default: adjusted to 4-second epochs expressed in hours. |
+| `xl`   | Label for the temporal axis. Default: `time (hours)`. |
+| `y.d`   | Scaling factor for the delay (lag) axis. Default: adjusted to a 5 kHz sampling rate and expressed in milliseconds. |
+| `yl`   | Label for the delay axis. Default: `delay (ms)`. |
+| `col.limits`   | A two-element vector specifying the range of the Psi-scale to map onto the pseudocolor scale. If `NULL` (default), autoscaling is applied. |
+| `auto.col.lim`   | Quantile of psi.matrix used to determine the upper limit of the pseudocolor scale during autoscaling. Values exceeding this limit are clipped. Default: `auto.col.lim = 0.98`. |
+| `plot.mar`   |A four-element vector specifying the plot area margins. Default: `[4, 4, 2, 1]` (bottom, left, upper, right). |
 
 #### **Value**
-A vector of length new.length containing resampled elements from v, preserving the unique categories and their relative order.
+A matrix where each row represents a Psi-pattern
 
 #### **Example**
 ```r
