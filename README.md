@@ -339,7 +339,7 @@ plot.Psi.matrix(psi.matrix, win.width = NULL, win.offset = 0,
 |----------|-------------|
 | `psi.matrix`    | A Psi-matrix, where each row corresponds to a Psi-pattern. |
 | `win.width`   | The number of rows (epochs) to be visualized in the plot. If set to `NULL` (default), the entire matrix is plotted.|
-| `off`   | Time offset (number of epochs) used alongside `win.width` to visualize a specific submatrix of `psi.matrix`.|
+| `win.offset`   | Time offset (number of epochs) used alongside `win.width` to visualize a specific submatrix of `psi.matrix`.|
 | `col.grad1`   | Color gradient representing the negative range of the Psi-scale. Default: [dark-red → black].|
 | `col.grad2`   | Color gradient representing the positive range of the Psi-scale. Default: [black → blue → light-blue → cyan]. |
 | `num.col`   | Total number of color levels across `col.grad1` and `col.grad2`. Default: `num.col = 512`. |
