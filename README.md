@@ -352,6 +352,10 @@ plot.Psi.matrix(psi.matrix, win.width = NULL, win.offset = 0,
 | `auto.col.lim`   | Quantile of psi.matrix used to determine the upper limit of the pseudocolor scale during autoscaling. Values exceeding this limit are clipped. Default: `auto.col.lim = 0.98`. |
 | `plot.mar`   |A four-element vector specifying the plot area margins. Default: `[4, 4, 2, 1]` (bottom, left, upper, right). |
 
+Details
+- When autoscaling, the upper limit of the Psi range is determined according to `quantile(psi.matrix, auto.col.lim)`
+
+
 #### **Value**
 The primary output of the function is the Psi-matrix visualization as a pseudocolor plot.
 In addition, the function invisibly returns `col.limits`, a two-element numeric vector representing the minimum and maximum values of the Psi-scale mapped onto the pseudocolor scale. This can be reused to ensure consistent scaling across multiple plots.
