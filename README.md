@@ -331,7 +331,7 @@ plot.Psi.matrix(psi.matrix, win.width = NULL, win.offset = 0,
                 col.grad1 = c(rgb(0.5,0,0), rgb(0,0,0)), 
                 col.grad2 = c(rgb(0,0,0), rgb(0,0,1), rgb(0.5,0.5,1), rgb(0,1,1)),
                 grad.ratio = 3, x.d = 4/3600, xl = "time (hours)", y.d = 1/5, yl = "time (ms)",
-                col.limits = NULL, auto.col.lim = 0.975, plot.mar = c(4,4,2,1), num.col = 512)
+                col.limits = NULL, auto.col.lim = 0.98, plot.mar = c(4,4,2,1), num.col = 512)
 ```
 
 #### **Arguments**
