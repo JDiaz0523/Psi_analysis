@@ -1,5 +1,5 @@
 # Psi-patterns of Mouse EEG: R Functions and Demo Scripts.
-**Author**: Javier Diaz  
+**Author**: Javier Diaz Cisternas  
 
 ## Overview
 This repository contains scripts and functions for analyzing mouse EEG data using the Psi-analysis framework.  
