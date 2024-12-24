@@ -354,7 +354,10 @@ plot.Psi.matrix(psi.matrix, win.width = NULL, win.offset = 0,
 
 Details
 - **Customizable Color Scales**. The function allows users to modify the color scales for visualization. Internally, colorRampPalette is used to generate the color gradients, with col.grad1 and col.grad2 passed as arguments to this function.
-- **Autoscaling Behavior**: When autoscaling is enabled (default), the upper limit of the Psi range is determined using quantile evaluation: `q <- quantile(psi.matrix, auto.col.lim, na.rm = TRUE)`
+- **Autoscaling Behavior**: When autoscaling is enabled (default), the upper limit of the Psi range is determined using quantile evaluation:
+  ```r
+  q <- quantile(psi.matrix, auto.col.lim, na.rm = TRUE)
+  ```
 
 
 - Color scales can be changed. Internally, the function `colorRampPalette` is used to build the color gradients and `col.grad1` and `col.grad1` are passed as arguments to `colorRampPalette`.
