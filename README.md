@@ -26,8 +26,6 @@ This approach ensures you can quickly test the framework without complex setup s
 6. [Quick Start](#quick-start)
 7. [Contributing](#contributing)
 
-The complete implementation of these functions is available in the file [`PsiAnalysis_Functions.R`](link-to-the-file).    
-Users can download or explore the file directly from the repository.
 ---
 
 ## About Psi-analysis
@@ -53,6 +51,8 @@ git clone https://github.com/your_username/psi-analysis.git
 | [plot.Psi.matrix](#plotPsimatrix)    | Displays the Psi matrix using a custom pseudocolor scale. |
 | [map.vector](#mapvector)         | Rescales a vector to a specified length using proportional mapping. |
 
+The complete implementation of these functions is available in the file [`PsiAnalysis_Functions.R`](link-to-the-file).    
+Users can download or explore the file directly from the repository.
 ---------------------------------------------------------------------------------------
 ### **do.alpha.pulse**
 ---
