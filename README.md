@@ -26,6 +26,8 @@ This approach ensures you can quickly test the framework without complex setup s
 6. [Quick Start](#quick-start)
 7. [Contributing](#contributing)
 
+The complete implementation of these functions is available in the file [`PsiAnalysis_Functions.R`](link-to-the-file).    
+Users can download or explore the file directly from the repository.
 ---
 
 ## About Psi-analysis
