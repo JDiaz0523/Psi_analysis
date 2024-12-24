@@ -327,7 +327,7 @@ This function is particularly suited for the visualization of EEG Psi-pattern dy
 
 #### **Usage**
 ```r
-plot.Psi.matrix(psi.matrix, win.width = NULL, off = 0,
+plot.Psi.matrix(psi.matrix, win.width = NULL, win.offset = 0,
                 col.grad1 = c(rgb(0.5,0,0), rgb(0,0,0)), 
                 col.grad2 = c(rgb(0,0,0), rgb(0,0,1), rgb(0.5,0.5,1), rgb(0,1,1)),
                 grad.ratio = 3, x.d = 4/3600, xl = "time (hours)", y.d = 1/5, yl = "time (ms)",
@@ -353,14 +353,34 @@ plot.Psi.matrix(psi.matrix, win.width = NULL, off = 0,
 | `plot.mar`   |A four-element vector specifying the plot area margins. Default: `[4, 4, 2, 1]` (bottom, left, upper, right). |
 
 #### **Value**
-A matrix where each row represents a Psi-pattern
+The primary output of the function is the Psi-matrix visualization as a pseudocolor plot.
+In addition, the function invisibly returns `col.limits`, a two-element numeric vector representing the minimum and maximum values of the Psi-scale mapped onto the pseudocolor scale. This can be reused to ensure consistent scaling across multiple plots.
 
 #### **Example**
 ```r
-# Example: Resampling a wake-sleep stages vector
-# If `score.10s.24h` is a categorized vector of wake-sleep stages for 10-second epochs covering 24 hours,
-# you can map it to 4-second epochs (21600 epochs in 24 hours) as follows:
-score.4s.24h <- map.vector(score.10s.24h, 21600)
+# Provided EEG_Psi_matrix as a Psi-matrix:
+
+# Example 1: Visualization of the entire Psi-matrix using autoscaling
+plot.Psi.matrix(EEG_Psi_matrix)
+
+# Example 2: Visualization of specific time intervals (e.g., first and second hours)
+# Visualizing the first hour of the Psi-matrix (4-second epochs = 900 epochs/hour)
+plot.Psi.matrix(EEG_Psi_matrix, win.width = 900)
+
+# Visualizing the second hour of the Psi-matrix
+plot.Psi.matrix(EEG_Psi_matrix, win.width = 900, win.offset = 900)
+
+# Example 3: Consistent scaling across baseline and experimental datasets
+# Visualize the baseline Psi-matrix and capture its pseudocolor mapping range
+ref.limits <- plot.Psi.matrix(EEG_Psi_matrix.baseline)
+
+# Use the same pseudocolor scaling to visualize the experimental Psi-matrix
+plot.Psi.matrix(EEG_Psi_matrix.exp, col.limits = ref.limits)
+
+# Example 4: Visualization without margins for raster export
+# Visualizing only the colored Psi-matrix (e.g., for export to Inkscape or Illustrator)
+plot.Psi.matrix(EEG_Psi_matrix, plot.mar = c(0, 0, 0, 0))
+
 ```
 
 ---------------------------------------------------------------------------------------
