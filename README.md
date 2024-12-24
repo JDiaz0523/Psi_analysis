@@ -353,7 +353,12 @@ plot.Psi.matrix(psi.matrix, win.width = NULL, win.offset = 0,
 | `plot.mar`   |A four-element vector specifying the plot area margins. Default: `[4, 4, 2, 1]` (bottom, left, upper, right). |
 
 Details
-- When autoscaling, the upper limit of the Psi range is determined according to `quantile(psi.matrix, auto.col.lim)`
+- Customizable Color Scales:
+The function allows users to modify the color scales for visualization. Internally, colorRampPalette is used to generate the color gradients, with col.grad1 and col.grad2 passed as arguments to this function.
+
+- Color scales can be changed. Internally, the function `colorRampPalette` is used to build the color gradients and `col.grad1` and `col.grad1` are passed as arguments to `colorRampPalette`.
+- When autoscaling, the upper limit of the Psi range is determined according to the quantile evaluation `q <- quantile(psi.matrix, auto.col.lim, na.rm = T)`, and The lower limit is `-q/grad.ratio`.
+- Custom visualization for enhanced contrast, etc., can be achieved by analyzing the histogram of `psi.matrix` and choosing adequate values to control the function, e.g. `plot.Psi.matrix(EEG_Psi_matrix, col.limits = c(val1, val2)`.
 
 
 #### **Value**
