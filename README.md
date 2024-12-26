@@ -30,7 +30,15 @@ This approach ensures you can quickly test the framework without complex setup s
 
 ## About Psi-analysis
 Psi-analysis is a novel framework designed to analyze state-dependent EEG patterns at high temporal resolution.  
-It is particularly effective for identifying characteristic Psi-matrix patterns across sleep states (WAKE, NREM, REM).  
+It is particularly effective for identifying characteristic Psi-matrix patterns across sleep states (WAKE, NREM, REM).
+
+## About filtered Poisson process
+A Poisson process models the random occurrence of discrete, independent events in time, typically represented as instantaneous points. The filtered Poisson process extends this concept by replacing each instantaneous event with a non-instantaneous function, often referred to as a kernel. This transformation generates a continuous signal, where overlapping contributions occur naturally when events are temporally close, resulting in superposition of the kernels.
+
+The FPP efficiently captures the intrinsic interference arising from the randomness of event timing. This is achieved by generating a Poisson process and convolving it with an arbitrary kernel. The resulting signal retains the randomness of the underlying process while incorporating the effects of the chosen kernel's shape and duration.
+
+The R code provided in this repository demonstrates the basic steps to generate and visualize filtered Poisson processes, showcasing their utility in modeling stochastic signals.
+
 
 ## Installation
 Clone this repository and install the required R packages.  
