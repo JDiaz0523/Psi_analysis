@@ -35,9 +35,22 @@ It is particularly effective for identifying characteristic Psi-matrix patterns 
 ## About filtered Poisson process
 A Poisson process models the random occurrence of discrete, independent events in time, typically represented as instantaneous points. The filtered Poisson process extends this concept by replacing each instantaneous event with a non-instantaneous function, often referred to as a kernel. This transformation generates a continuous signal, where overlapping contributions occur naturally when events are temporally close, resulting in superposition of the kernels.
 
-The FPP efficiently captures the intrinsic interference arising from the randomness of event timing. This is achieved by generating a Poisson process and convolving it with an arbitrary kernel. The resulting signal retains the randomness of the underlying process while incorporating the effects of the chosen kernel's shape and duration.
+The FPP efficiently captures the intrinsic interference arising from the randomness of event timing. This is achieved by generating a Poisson process and convolving it with an arbitrary kernel. The resulting signal retains the randomness of the underlying process while incorporating the effects of the chosen kernel's temporal profile.
 
-The R code provided in this repository demonstrates the basic steps to generate and visualize filtered Poisson processes, showcasing their utility in modeling stochastic signals.
+The R code provided in this repository demonstrates the basic steps to generate and visualize filtered Poisson processes, showcasing their utility in modeling stochastic signals. The next code illustrates step by step a basic strategy to generate an FPP in R
+
+```r
+fs <- 2000
+total.time <- 1
+n.samples <- fs*total.time
+lambda_g <- 500
+lambda <- lambda_g/fs
+PP <- rpois(n.samples, lambda)
+tau <- 0.02
+pulse <-  do.alpha.pulse(tau, fs, total.time)
+FPP <- convolve(pulse, rev(PP), type = "circular")
+plot(FPP, type = "l")
+```
 
 
 ## Installation
