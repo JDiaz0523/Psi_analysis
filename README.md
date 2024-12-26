@@ -33,23 +33,35 @@ Psi-analysis is a novel framework designed to analyze state-dependent EEG patter
 It is particularly effective for identifying characteristic Psi-matrix patterns across sleep states (WAKE, NREM, REM).
 
 ## About filtered Poisson process
-A Poisson process models the random occurrence of discrete, independent events in time, typically represented as instantaneous points. The filtered Poisson process extends this concept by replacing each instantaneous event with a non-instantaneous function, often referred to as a kernel. This transformation generates a continuous signal, where overlapping contributions occur naturally when events are temporally close, resulting in superposition of the kernels.
+Filtered Poisson Process (FPP)
+
+A Poisson process models the random occurrence of discrete, independent events in time, typically represented as instantaneous points. The filtered Poisson process extends this concept by replacing each instantaneous event with a non-instantaneous function, often referred to as a kernel. This transformation generates a continuous signal, where overlapping contributions occur naturally when events are temporally close, resulting in the superposition of the kernels.
 
 The FPP efficiently captures the intrinsic interference arising from the randomness of event timing. This is achieved by generating a Poisson process and convolving it with an arbitrary kernel. The resulting signal retains the randomness of the underlying process while incorporating the effects of the chosen kernel's temporal profile.
 
-The R code provided in this repository demonstrates the basic steps to generate and visualize filtered Poisson processes, showcasing their utility in modeling stochastic signals. The next code illustrates step by step a basic strategy to generate an FPP in R
+The R code provided in this repository demonstrates the basic steps to generate and visualize filtered Poisson processes, showcasing their utility in modeling stochastic signals. Below is a simple example illustrating how to generate an FPP in R:
 
 ```r
-fs <- 2000
-total.time <- 1
-n.samples <- fs*total.time
-lambda_g <- 500
-lambda <- lambda_g/fs
+# Set parameters
+fs <- 2000               # Sampling frequency (Hz)
+total.time <- 1          # Total duration (seconds)
+n.samples <- fs * total.time  # Number of samples
+lambda_g <- 500          # Event rate (events/second)
+lambda <- lambda_g / fs  # Event rate (events/sample)
+
+# Generate Poisson process
 PP <- rpois(n.samples, lambda)
-tau <- 0.02
-pulse <-  do.alpha.pulse(tau, fs, total.time)
+
+# Define kernel (pulse)
+tau <- 0.02              # Kernel duration (seconds)
+pulse <- do.alpha.pulse(tau, fs, total.time)  # Custom kernel function
+
+# Convolve Poisson process with kernel
 FPP <- convolve(pulse, rev(PP), type = "circular")
-plot(FPP, type = "l")
+
+# Plot the resulting FPP
+plot(FPP, type = "l", main = "Filtered Poisson Process", xlab = "Time (samples)", ylab = "Amplitude")
+
 ```
 
 
