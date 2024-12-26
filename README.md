@@ -53,7 +53,7 @@ lambda <- lambda_g / fs  # Event rate (events/sample)
 PP <- rpois(n.samples, lambda)
 
 # Define kernel (pulse)
-tau <- 0.02              # Kernel duration (seconds)
+tau <- 0.02              # Kernel time constant (seconds)
 pulse <- do.alpha.pulse(tau, fs, total.time)  # Custom kernel function
 
 # Convolve Poisson process with kernel
