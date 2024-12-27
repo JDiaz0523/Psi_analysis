@@ -52,6 +52,7 @@ total.time <- 1          # Total duration (seconds)
 n.samples <- fs*total.time  # Number of samples
 lambda_g <- 500          # Event rate (events/second)
 lambda <- lambda_g/fs  # Event rate (events/sample)
+E_g <- 1 # The energy carried by the pulse
 
 # Step 2: Generate Poisson process
 PP <- rpois(n.samples, lambda)
@@ -59,7 +60,7 @@ PP <- rpois(n.samples, lambda)
 # Step 3: Define kernel (pulse)
 tau <- 0.01              # Kernel time constant (seconds)
 pulse <- do.alpha.pulse(tau, fs, total.time)  # Custom kernel function
-pulse <- unitE(pulse)    # Normalize kernel energy to 1
+pulse <- unitE(pulse, E_g)    # Normalize kernel energy to 1
 
 # Step 4: Convolve Poisson process with kernel
 FPP <- convolve(pulse, rev(PP), type = "circular")
@@ -79,6 +80,8 @@ The function rpois generates a vector of length n.samples filled with random dev
 - The expected number of events per bin is `lambda = lambda_g/fs`, where `lambda_g` is the event rate in events per second.
 
 These discrete event counts form the basis of the Poisson process, which is then filtered through convolution with the kernel to produce a continuous signal.
+
+The kernel (or pulse) can be defined using any arbitrary function, provided that its total energy is finite (i.e., it forms an energy packet). In this example, an [alpha function]((#doalphapulse) ) is used. Regardless of the specific pulse shape, it is important to fully control the pulse's energy, as key properties of the FPP depend on it.
 
 
 ## Installation
