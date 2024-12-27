@@ -42,26 +42,34 @@ The FPP efficiently captures the intrinsic interference arising from the randomn
 The R code provided in this repository demonstrates the basic steps to generate and visualize filtered Poisson processes, showcasing their utility in modeling stochastic signals. Below is a simple example illustrating how to generate an FPP in R:
 
 ```r
-# Set parameters
+#----------------------------------------------------
+# Generating a Filtered Poisson Process (FPP)
+#----------------------------------------------------
+
+# Step 1: Set parameters
 fs <- 2000               # Sampling frequency (Hz)
 total.time <- 1          # Total duration (seconds)
 n.samples <- fs * total.time  # Number of samples
 lambda_g <- 500          # Event rate (events/second)
 lambda <- lambda_g / fs  # Event rate (events/sample)
 
-# Generate Poisson process
+# Step 2: Generate Poisson process
 PP <- rpois(n.samples, lambda)
 
-# Define kernel (pulse)
-tau <- 0.02              # Kernel time constant (seconds)
+# Step 3: Define kernel (pulse)
+tau <- 0.01              # Kernel time constant (seconds)
 pulse <- do.alpha.pulse(tau, fs, total.time)  # Custom kernel function
+pulse <- unitE(pulse)    # Normalize kernel energy to 1
 
-# Convolve Poisson process with kernel
+# Step 4: Convolve Poisson process with kernel
 FPP <- convolve(pulse, rev(PP), type = "circular")
+FPP <- FPP - mean(FPP)   # Center the signal (e.g., for EEG simulations)
 
-# Plot the resulting FPP
-plot(FPP, type = "l", main = "Filtered Poisson Process", xlab = "Time (samples)", ylab = "Amplitude")
-
+# Step 5: Plot the resulting FPP
+plot(FPP, type = "l", 
+     main = "Filtered Poisson Process (FPP)", 
+     xlab = "Time (samples)", 
+     ylab = "Amplitude")
 ```
 
 
