@@ -82,7 +82,7 @@ The function `rpois` generates a vector of length `n.samples` filled with random
 
 The kernel (or pulse) can be defined using any arbitrary function, provided that its total energy is finite (i.e., it forms a discrete energy packet). An [alpha function](#doalphapulse) is used in the example. Regardless of the specific pulse shape, it is important to control the pulse's energy fully, as key properties of the FPP depend on it. For example, the FPP variance is `lambda_g*E_g/fs`, while the FPP power is `lambda_g*E_g` (see xxx for additional information).
 
-In the convolution operation, the option `"circular"` confines the signal to a cylindrical space, ensuring no energy leakage occurs at the borders by wrapping contributions from the edges back into the signal.
+In the convolution operation, the option `"circular"` confines the signal to a cylindrical space, ensuring no energy leakage occurs at the borders by wrapping contributions that may overflow from the edges back into the signal.
 
 ## Installation
 Clone this repository and install the required R packages.  
