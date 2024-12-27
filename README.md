@@ -49,10 +49,9 @@ The R code provided in this repository demonstrates the basic steps to generate 
 # Step 1: Set parameters
 fs <- 2000               # Sampling frequency (Hz)
 total.time <- 1          # Total duration (seconds)
-n.samples <- fs*total.time  # Number of samples
+n.samples <- fs * total.time  # Number of samples
 lambda_g <- 500          # Event rate (events/second)
-lambda <- lambda_g/fs  # Event rate (events/sample)
-E_g <- 1 # The energy carried by the pulse
+lambda <- lambda_g / fs  # Event rate (events/sample)
 
 # Step 2: Generate Poisson process
 PP <- rpois(n.samples, lambda)
@@ -60,16 +59,17 @@ PP <- rpois(n.samples, lambda)
 # Step 3: Define kernel (pulse)
 tau <- 0.01              # Kernel time constant (seconds)
 pulse <- do.alpha.pulse(tau, fs, total.time)  # Custom kernel function
-pulse <- unitE(pulse, E_g)    # Normalize kernel energy to 1
+pulse <- unitE(pulse)    # Normalize kernel energy to 1
 
 # Step 4: Convolve Poisson process with kernel
 FPP <- convolve(pulse, rev(PP), type = "circular")
 FPP <- FPP - mean(FPP)   # Center the signal (e.g., for EEG simulations)
 
 # Step 5: Plot the resulting FPP
-plot(FPP, type = "l", 
+x.time <- seq(from = 0, by = 1/fs, length.out = n.samples)
+plot(x.time, FPP, type = "l", 
      main = "Filtered Poisson Process (FPP)", 
-     xlab = "Time (samples)", 
+     xlab = "Time (seconds)", 
      ylab = "Amplitude")
 ```
 
