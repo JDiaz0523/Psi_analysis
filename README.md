@@ -73,7 +73,8 @@ plot(FPP, type = "l",
      ylab = "Amplitude")
 ```
 
-##Details
+Details
+
 The function rpois generates a vector of length n.samples filled with random deviates following the Poisson distribution parameterized by lambda. Each value in the vector is an integer representing the number of events that occurred randomly in a specific time bin, based on the sampling frequency (fs).
 
 - A time bin corresponds to a single sample, determined by fs (e.g., if `fs = 2000`, each time bin is 1/2000 seconds).
