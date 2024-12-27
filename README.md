@@ -1,4 +1,4 @@
-# Psi-patterns of Mouse EEG: R Functions and Demo Scripts.
+# Psi-analysis and Psi-patterns of Mouse EEG: R Functions and Demo Scripts.
 **Author**: Javier Diaz Cisternas  
 
 ## Overview
