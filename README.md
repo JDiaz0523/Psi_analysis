@@ -49,9 +49,9 @@ The R code provided in this repository demonstrates the basic steps to generate 
 # Step 1: Set parameters
 fs <- 2000               # Sampling frequency (Hz)
 total.time <- 1          # Total duration (seconds)
-n.samples <- fs * total.time  # Number of samples
+n.samples <- fs*total.time  # Number of samples
 lambda_g <- 500          # Event rate (events/second)
-lambda <- lambda_g / fs  # Event rate (events/sample)
+lambda <- lambda_g/fs  # Event rate (events/sample)
 
 # Step 2: Generate Poisson process
 PP <- rpois(n.samples, lambda)
