@@ -72,6 +72,12 @@ plot(FPP, type = "l",
      ylab = "Amplitude")
 ```
 
+##Details
+The function rpois generates a vector of length n.samples filled with random deviates following the Poisson distribution parameterized by lambda. Each value in the vector is an integer representing the number of events that occurred randomly in a specific time bin, based on the sampling frequency (fs).
+- A time bin corresponds to a single sample, determined by fs (e.g., if `fs = 2000`, each time bin is 1/2000 seconds).
+- The expected number of events per bin is `lambda = lambda_g/fs`, where `lambda_g` is the event rate in events per second.
+These discrete event counts form the basis of the Poisson process, which is then filtered through convolution with the kernel to produce a continuous signal.
+
 
 ## Installation
 Clone this repository and install the required R packages.  
