@@ -81,7 +81,7 @@ The function rpois generates a vector of length n.samples filled with random dev
 
 These discrete event counts form the basis of the Poisson process, which is then filtered through convolution with the kernel to produce a continuous signal.
 
-The kernel (or pulse) can be defined using any arbitrary function, provided that its total energy is finite (i.e., it forms an energy packet). In this example, an [alpha function]((#doalphapulse) ) is used. Regardless of the specific pulse shape, it is important to fully control the pulse's energy, as key properties of the FPP depend on it.
+The kernel (or pulse) can be defined using any arbitrary function, provided that its total energy is finite (i.e., it forms an energy packet). In this example, an [alpha function](#doalphapulse) is used. Regardless of the specific pulse shape, it is important to fully control the pulse's energy, as key properties of the FPP depend on it.
 
 
 ## Installation
