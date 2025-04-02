@@ -509,7 +509,7 @@ score.4s.24h <- map.vector(score.10s.24h, 21600)
 ---------------------------------------------------------------------------------------
 ### **Download resources**
 📥 [Download R functions](https://github.com/JDiaz0523/Psi_analysis/raw/refs/heads/main/PsiAnalysis_Functions.R)  
-*R file containing all of the functions listed above (**PsiAnalysis_Functions.R**).* 
+*R file containing all functions listed above (**PsiAnalysis_Functions.R**).* 
 
 📥 [Download example EEG file](https://github.com/JDiaz0523/Psi_analysis/raw/refs/heads/main/data/mouse_eeg_1h_5kHz.rds)  
 *One-hour representative mouse EEG recording sampled at 5 kHz (**mouse_eeg_1h_5kHz.rds**).* 
