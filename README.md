@@ -384,7 +384,13 @@ A numeric vector of length equal to the number of rows in `psi.matrix`, where ea
 
 #### **Example**
 ```r
+# Provided psi.matrix as an EEG Psi-matrix with a sampling rate of 5 kHz:
 
+# Example 1: Computing EEG Psi-UFC (using the first 3 samples)
+EEG.Psi.UFC <- psi.extract(psi.matrix, 3)
+
+# Example 2: Computing EEG Psi-SC (using the first 500 samples)
+EEG.Psi.SC <- psi.extract(psi.matrix, 500)
 ```
 
 ---------------------------------------------------------------------------------------
@@ -450,28 +456,28 @@ In addition, the function invisibly returns `col.limits`, a two-element numeric 
 
 #### **Example**
 ```r
-# Provided EEG_Psi_matrix as a Psi-matrix:
+# Provided psi_matrix as a EEG Psi-matrix:
 
 # Example 1: Visualization of the entire Psi-matrix using autoscaling
-plot.Psi.matrix(EEG_Psi_matrix)
+plot.Psi.matrix(psi_matrix)
 
 # Example 2: Visualization of specific time intervals (e.g., first and second hours)
 # Visualizing the first hour of the Psi-matrix (4-second epochs = 900 epochs/hour)
-plot.Psi.matrix(EEG_Psi_matrix, win.width = 900)
+plot.Psi.matrix(psi_matrix, win.width = 900)
 
 # Visualizing the second hour of the Psi-matrix
-plot.Psi.matrix(EEG_Psi_matrix, win.width = 900, win.offset = 900)
+plot.Psi.matrix(psi_matrix, win.width = 900, win.offset = 900)
 
 # Example 3: Consistent scaling across baseline and experimental datasets
 # Visualize the baseline Psi-matrix and capture its pseudocolor mapping range
-ref.limits <- plot.Psi.matrix(EEG_Psi_matrix.baseline)
+ref.limits <- plot.Psi.matrix(psi_matrix.baseline)
 
 # Use the same pseudocolor scaling to visualize the experimental Psi-matrix
-plot.Psi.matrix(EEG_Psi_matrix.exp, col.limits = ref.limits)
+plot.Psi.matrix(psi_matrix.exp, col.limits = ref.limits)
 
 # Example 4: Visualization without margins for raster export
 # Visualizing only the colored Psi-matrix (e.g., for export to Inkscape or Illustrator)
-plot.Psi.matrix(EEG_Psi_matrix, plot.mar = c(0, 0, 0, 0))
+plot.Psi.matrix(psi_matrix, plot.mar = c(0, 0, 0, 0))
 
 ```
 
