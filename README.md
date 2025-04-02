@@ -511,3 +511,7 @@ score.4s.24h <- map.vector(score.10s.24h, 21600)
 
 📥 [Download example EEG file](https://github.com/JDiaz0523/Psi_analysis/raw/refs/heads/main/data/mouse_eeg_1h_5kHz.rds)
 *One-hour representative mouse EEG recording sampled at 5 kHz (**mouse_eeg_1h_5kHz.rds**).* 
+
+📥 [Download example EEG file](https://raw.githubusercontent.com/JDiaz0523/Psi_analysis/main/data/mouse_eeg_1h_5kHz.rds)  
+*One-hour representative mouse EEG recording sampled at 5 kHz (**mouse_eeg_1h_5kHz.rds**).*  
+
