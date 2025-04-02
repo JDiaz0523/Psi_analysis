@@ -361,6 +361,48 @@ adjusted.last.epoch <- specular.ext(91:105, lim.sup = 100)
 print(adjusted.last.epoch)
 # Output: c(91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 99, 98, 97, 96, 95)
 ```
+---------------------------------------------------------------------------------------
+### **psi.extract**
+---
+#### **Description**
+Mirrors the boundaries of a signal to handle out-of-bound indices gracefully. This function adjusts indices outside the valid range (1 to `lim.sup`) by reflecting them back into the range, ensuring continuity at the boundaries. When called by the function `epoch.feature`, `lim.sup` corresponds to the length of the signal under analysis.
+
+#### **Usage**
+```r
+psi.extract(psi.matrix, n)
+```
+
+#### **Arguments**
+| Argument | Description |  
+|----------|-------------|
+| `psi.matrix`    | A numeric vector of indices to be adjusted. |
+| `n`   | The upper limit of the valid range of indices (typically the signal length). |
+
+#### **Value**
+A numeric vector of the same length as `K`, with out-of-bound indices replaced by their mirrored equivalents.
+
+Details
+- For indices less than 1, the function mirrors them around 1.
+- For indices greater than `lim.sup`, the function mirrors them around `lim.sup`.
+- This ensures all returned indices are within the valid range [1,`lim.sup`].
+
+#### **Example**
+```r
+# If we divide a ramp signal with 100 elements (e.g., 1:100) into 10 epochs, 
+# and extend each epoch by 50%, the following indices might arise for the first and last epochs:
+# - The first epoch: -4:10
+# - The last epoch: 91:105
+
+# Adjust the first epoch's indices using specular.ext
+adjusted.first.epoch <- specular.ext(-4:10, lim.sup = 100)
+print(adjusted.first.epoch)
+# Output: c(6, 5, 4, 3, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+# Adjust the last epoch's indices using specular.ext
+adjusted.last.epoch <- specular.ext(91:105, lim.sup = 100)
+print(adjusted.last.epoch)
+# Output: c(91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 99, 98, 97, 96, 95)
+```
 
 ---------------------------------------------------------------------------------------
 ### **plot.Psi.matrix**
