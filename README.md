@@ -3,7 +3,7 @@
 
 ## Overview
 This repository contains scripts and functions for analyzing mouse EEG data using the Psi-analysis framework.  
-For details on the methodology, refer to [link to DOI](https://doi.org/xyz).  
+For details on the methodology, refer to [manuscriptURL](https://doi.org/xyz).  
 
 ---
 
