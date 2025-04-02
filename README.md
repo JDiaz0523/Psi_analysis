@@ -21,7 +21,7 @@ This approach ensures you can quickly test the framework without complex setup s
 1. [About Psi-analysis](#about-psi-analysis)
 2. [Installation](#installation)
 3. [Functions list](#Function-Descriptions-Table)
-4. [Download files](#download)
+4. [Download files](#downloads)
 ---
 
 ## About Psi-analysis
