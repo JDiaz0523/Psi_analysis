@@ -21,7 +21,7 @@ This approach ensures you can quickly test the framework without complex setup s
 1. [About Psi-analysis](#about-psi-analysis)
 2. [Installation](#installation)
 3. [Functions list](#Function-Descriptions-Table)
-4. [Download files](#downloads)
+4. [Download resources](#Download-resources)
 ---
 
 ## About Psi-analysis
@@ -507,7 +507,7 @@ score.4s.24h <- map.vector(score.10s.24h, 21600)
 
 ---------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------
-### **Downloads**
+### **Download resources**
 
 📥 [Download example EEG file](https://github.com/JDiaz0523/Psi_analysis/raw/refs/heads/main/data/mouse_eeg_1h_5kHz.rds)  
 *One-hour representative mouse EEG recording sampled at 5 kHz (**mouse_eeg_1h_5kHz.rds**).* 
