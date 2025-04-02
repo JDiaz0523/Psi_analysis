@@ -8,13 +8,6 @@ For details on the methodology, refer to [manuscriptURL](https://doi.org/xyz).
 <img src="FPP.png" alt="Filtered Poisson process (FPP)" width="475" height="600">
 
 ---
-
-## Quick Start
-If you're new to this project, you can simply:
-1. Copy and paste the functions provided in `psi_analysis_functions.R` into your RStudio environment.
-2. Download the test data file [mouse_eeg_1h_5kHz.rds](data/mouse_eeg_1h_5kHz.rds) and place it in your working directory.
-3. Follow the examples provided in the demo scripts to generate Psi-matrices and visualizations.  
-
 This approach ensures you can quickly test the framework without complex setup steps.
 
 ---
