@@ -21,11 +21,7 @@ This approach ensures you can quickly test the framework without complex setup s
 1. [About Psi-analysis](#about-psi-analysis)
 2. [Installation](#installation)
 3. [Functions list](#Function-Descriptions-Table)
-4. [Usage](#usage)
-5. [Examples](#examples)
-6. [Quick Start](#quick-start)
-7. [Contributing](#contributing)
-
+4. [Download files](#download)
 ---
 
 ## About Psi-analysis
@@ -508,3 +504,7 @@ A vector of length new.length containing resampled elements from v, preserving t
 # you can map it to 4-second epochs (21600 epochs in 24 hours) as follows:
 score.4s.24h <- map.vector(score.10s.24h, 21600)
 ```
+
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+### **Downloads**
