@@ -100,7 +100,7 @@ git clone https://github.com/your_username/psi-analysis.git
 | [neg.diff.ACF](#negdiffACF)       | Computes the negative derivative of the autocovariance function. |
 | [epoch.feature](#epochfeature)      | Divides a signal into epochs and evaluates a feature according to a given function. |
 | [specular.ext](#specularext)       | Extends a vector by mirroring its ends. |
-| [psi.extract](#psiextract)       | Extends a vector by mirroring its ends. |
+| [psi.extract](#psiextract)       | Extracts power slices of power from Psi-matrices. |  
 | [plot.Psi.matrix](#plotPsimatrix)    | Displays the Psi matrix using a custom pseudocolor scale. |
 | [map.vector](#mapvector)         | Rescales a vector to a specified length using proportional mapping. |
 
@@ -382,7 +382,7 @@ psi.extract(psi.matrix, n)
 #### **Value**
 A numeric vector of length equal to the number of rows in `psi.matrix`, where each element is the sum of the first `n` samples of the corresponding Psi-pattern.
 
-#### **Example**
+#### **Examples**
 ```r
 # Provided psi.matrix as an EEG Psi-matrix with a sampling rate of 5 kHz:
 
