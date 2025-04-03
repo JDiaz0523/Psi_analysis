@@ -68,11 +68,6 @@ The kernel (or pulse) can be defined using any arbitrary function, provided that
 
 In the convolution operation, the option `"circular"` confines the signal to a cylindrical space, ensuring no energy leakage occurs at the borders by wrapping contributions that may overflow from the edges back into the signal.
 
-## Installation
-Clone this repository and install the required R packages.  
-```bash
-git clone https://github.com/your_username/psi-analysis.git
-```
 ## Function Descriptions Table
 
 | Function           | Description                                                 |
@@ -502,5 +497,7 @@ score.4s.24h <- map.vector(score.10s.24h, 21600)
 📥 [Download example EEG file](https://github.com/JDiaz0523/Psi_analysis/raw/refs/heads/main/data/mouse_eeg_1h_5kHz.rds)  
 *One-hour representative mouse EEG recording sampled at 5 kHz (**mouse_eeg_1h_5kHz.rds**).* 
 
-
-
+For those who prefer to download everything using Git functionalities:  
+```bash
+git clone https://github.com/your_username/psi-analysis.git
+```
