@@ -2,7 +2,7 @@
 **Author**: Javier Diaz Cisternas  
 
 ## Overview
-This repository contains functions supporting the methodology presented in *Recovering Arrhythmic EEG Transients from Their Stochastic Interference* [DOI].
+This repository contains functions supporting the methodology presented in *Recovering Arrhythmic EEG Transients from Their Stochastic Interference* [DOI-link].
 
 The framework aims to characterize the arrhythmic structure of the electroencephalogram (EEG) by modeling EEG as a superposition of arrhythmic transients (pulses), using a Filtered Poisson Process (FPP) as a generative model. This repository provides functions for generating artificial signals based on FPP, enabling controlled experiments with arbitrary pulse waveforms at varying pulse densities.
 
