@@ -14,7 +14,7 @@ The accompanying figure illustrates these artificial signals, where pulses follo
 
 ---
 ## Table of Contents
-1. [Implementing a filtered Poisson process](##Filtered-Poisson-process)
+1. [FPP implementation](#Filtered-Poisson-process)
 2. [Functions list](#Function-Descriptions-Table)
 3. [Download resources](#Download-resources)
 ---
