@@ -14,13 +14,12 @@ The accompanying figure illustrates these artificial signals, where pulses follo
 
 ---
 ## Table of Contents
-1. [Implementing FPP](##Filtered-Poisson-process (R implementation))
+1. [Implementing a filtered Poisson process](##Filtered-Poisson-process)
 2. [Functions list](#Function-Descriptions-Table)
 3. [Download resources](#Download-resources)
 ---
 
-## Filtered Poisson process (R implementation)
-Filtered Poisson Process (FPP)
+## Filtered Poisson process
 
 A Poisson process models the random occurrence of discrete, independent events in time, typically represented as instantaneous points. The filtered Poisson process extends this concept by replacing each instantaneous event with a non-instantaneous function, often referred to as a kernel. This transformation generates a continuous signal, where overlapping contributions occur naturally when events are temporally close, resulting in the superposition of the kernels.
 
