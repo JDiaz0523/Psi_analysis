@@ -83,8 +83,6 @@ In the convolution operation, the option `"circular"` confines the signal to a c
 | [plot.Psi.matrix](#plotPsimatrix)    | Displays the Psi matrix using a custom pseudocolor scale. |
 | [map.vector](#mapvector)         | Rescales a vector to a specified length using proportional mapping. |
 
-The complete implementation of these functions is available in the file [`PsiAnalysis_Functions.R`](link-to-the-file).    
-Users can download or explore the file directly from the repository.
 ---------------------------------------------------------------------------------------
 ### **do.alpha.pulse**
 ---
@@ -489,7 +487,6 @@ score.4s.24h <- map.vector(score.10s.24h, 21600)
 ```
 
 ---------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------
 ### **Download resources**
 📥 [Download R functions](https://github.com/JDiaz0523/Psi_analysis/raw/refs/heads/main/PsiAnalysis_Functions.R)  
 *R file containing all functions listed above (**PsiAnalysis_Functions.R**).* 
@@ -497,7 +494,8 @@ score.4s.24h <- map.vector(score.10s.24h, 21600)
 📥 [Download example EEG file](https://github.com/JDiaz0523/Psi_analysis/raw/refs/heads/main/data/mouse_eeg_1h_5kHz.rds)  
 *One-hour representative mouse EEG recording sampled at 5 kHz (**mouse_eeg_1h_5kHz.rds**).* 
 
+---------------------------------------------------------------------------------------
 For those who prefer to download everything using Git functionalities:  
 ```bash
-git clone https://github.com/your_username/psi-analysis.git
+---------------------------------------------------------------------------------------
 ```
