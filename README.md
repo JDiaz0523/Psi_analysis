@@ -68,6 +68,7 @@ The kernel (or pulse) can be defined using any arbitrary function, provided that
 
 In the convolution operation, the option `"circular"` confines the signal to a cylindrical space, ensuring no energy leakage occurs at the borders by wrapping contributions that may overflow from the edges back into the signal.
 
+---------------------------------------------------------------------------------------
 ## Function Descriptions Table
 
 | Function           | Description                                                 |
