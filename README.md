@@ -8,7 +8,9 @@ The framework aims to characterize the arrhythmic structure of the electroenceph
 
 The accompanying figure illustrates these artificial signals, where pulses following an alpha function (blue trace) are combined at densities ranging from 1 to 10,000 pulses per second. At high densities, the signal converges to colored Gaussian noise (bottom trace). Despite this interference, our framework enables an approximate reconstruction of the underlying pulse waveform from the statistical properties of such signals, demonstrating its potential to provide a novel feature space (i.e., arrhythmic components) for EEG characterization.
 
-<img src="FPP.png" alt="Filtered Poisson process (FPP)" width="475" height="600">
+<p align="center">
+  <img src="FPP.png" alt="Filtered Poisson process (FPP)" width="400" height="505">
+</p>
 
 ---
 This approach ensures you can quickly test the framework without complex setup steps.
