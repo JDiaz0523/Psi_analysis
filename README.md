@@ -498,5 +498,5 @@ score.4s.24h <- map.vector(score.10s.24h, 21600)
 ---------------------------------------------------------------------------------------
 For those who prefer to download everything using Git functionalities:  
 ```bash
----------------------------------------------------------------------------------------
+git clone https://github.com/JDiaz0523/Psi_analysis.git
 ```
