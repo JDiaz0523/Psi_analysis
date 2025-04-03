@@ -492,8 +492,17 @@ score.4s.24h <- map.vector(score.10s.24h, 21600)
 📥 [Download R functions](https://github.com/JDiaz0523/Psi_analysis/raw/refs/heads/main/code/PsiAnalysis_Functions.R)  
 *R file containing all functions listed above (**PsiAnalysis_Functions.R**).* 
 
-📥 [Download demo script #1](https://github.com/JDiaz0523/Psi_analysis/raw/refs/heads/main/code/simulated_FPP_demo_script.R)  
-*explanation!.* 
+📥 [Download demo script 1](https://github.com/JDiaz0523/Psi_analysis/raw/refs/heads/main/code/Demo_script_1_FPP.R)  
+*Explore the generation of FPPs by changing the values of key parameters (**Demo_script_1_FPP.R**).* 
+
+📥 [Download demo script 2](https://github.com/JDiaz0523/Psi_analysis/raw/refs/heads/main/code/Demo_script_2_pulse_recov.R)  
+*Explore the recovery of the pulse waveform from FPPs (**Demo_script_2_pulse_recov.R**).* 
+
+📥 [Download demo script 3](https://github.com/JDiaz0523/Psi_analysis/raw/refs/heads/main/code/Demo_script_3_pulse_mix.R)  
+*Explore Psi-patterns from FPPs considering pulse mixtures (**Demo_script_3_pulse_mix.R**).* 
+
+📥 [Download demo script 4](https://github.com/JDiaz0523/Psi_analysis/raw/refs/heads/main/code/Demo_script_4_EEG_Psi_matrix.R)  
+*Explore the novel EEG feature space offered by Psi analysis (**Demo_script_4_EEG_Psi_matrix.R**).* 
 
 📥 [Download example EEG file](https://github.com/JDiaz0523/Psi_analysis/raw/refs/heads/main/data/mouse_eeg_1h_5kHz.rds)  
 *One-hour representative mouse EEG recording sampled at 5 kHz (**mouse_eeg_1h_5kHz.rds**).* 
