@@ -180,7 +180,7 @@ pulse2 <- unitE(do.alpha.pulse(0.1, 1000, 1), outputE = 2)
 ### **var.delay**
 ---
 #### **Description**
-Calculates the variance of a given signal after subtracting progressively delayed copies of itself. This function, corresponding to the variance of $\hat{X}$ (ref, Eq. 4), is primarily intended for demonstrating mathematical concepts through numerical methods.
+Calculates the variance of a given signal after subtracting progressively delayed copies of itself. This function, corresponding to the variance of $\hat{X}$ ([Díaz et al., 2026](https://doi.org/10.1038/s42003-026-10357-y), Eq. 4), is primarily intended for demonstrating mathematical concepts through numerical methods.
 
 #### **Usage**
 ```r
