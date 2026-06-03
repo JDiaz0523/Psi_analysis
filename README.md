@@ -198,13 +198,13 @@ A numeric vector of length max.delay + 1. The first element is zero, correspondi
 
 #### **Example**
 ```r
-# Following Equation 11 (ref), Psi can be numerically calculated as:
+# Following Equation 11 ([Díaz et al., 2026](https://doi.org/10.1038/s42003-026-10357-y)), Psi can be numerically calculated as:
 Psi <- diff(var.delay(signal, max.delay))/2
 ```
 
 Notes
 
-- This function operates slowly in R (an interpreted language) and is intended only for demonstrations, such as numerically illustrating the equivalence of Equations 11 and 12 (ref), supported by Equation 9 (see demo script 2).
+- This function operates slowly in R (an interpreted language) and is intended only for demonstrations, such as numerically illustrating the equivalence of Equations 11 and 12 ([Díaz et al., 2026](https://doi.org/10.1038/s42003-026-10357-y)), supported by Equation 9 (see demo script 2).
 
 - For improved performance, use the neg.diff.ACF function, which calculates Psi efficiently by leveraging the optimized `acf` function.
 
@@ -230,7 +230,7 @@ A numeric vector of length `max.delay`, representing the negative derivative val
 
 #### **Example**
 ```r
-# Following Equation 12 (ref), Psi can be numerically calculated as:
+# Following Equation 12 ([Díaz et al., 2026](https://doi.org/10.1038/s42003-026-10357-y)), Psi can be numerically calculated as:
 Psi <- neg.diff.ACF(signal, max.delay)
 ```
 
@@ -375,7 +375,7 @@ EEG.Psi.SC <- psi.extract(psi.matrix, 500)
 ### **plot.Psi.matrix**
 ---
 #### **Description**
-The `plot.Psi.matrix` function visualizes a Psi-matrix using a dual pseudocolor scale designed to emphasize the significance of zero in the Psi-scale (ref). The function applies two separate color gradients—one for negative values and another for positive values—that meet seamlessly at zero with a shared black color. This ensures clear visual differentiation of positive and negative regions in the matrix.
+The `plot.Psi.matrix` function visualizes a Psi-matrix using a dual pseudocolor scale designed to emphasize the significance of zero in the Psi-scale ([Díaz et al., 2026](https://doi.org/10.1038/s42003-026-10357-y), Figs. 6, 8, and 10). The function applies two separate color gradients—one for negative values and another for positive values—that meet seamlessly at zero with a shared black color. This ensures clear visual differentiation of positive and negative regions in the matrix.
 
 To accommodate the expected distribution of Psi-values (mostly positive), the positive color gradient spans a broader range and includes more levels of colors, as defined by the grad.ratio parameter (typically at least three times the span of the negative range).
 
