@@ -59,7 +59,7 @@ plot(x.time, FPP, type = "l",
 
 Details
 
-The function `rpois` generates a vector of length `n.samples` filled with random deviates following the Poisson distribution parameterized by `lambda`. Each value in the vector is an integer representing the number of events that occurred randomly in a specific time bin, based on the sampling frequency (`fs`).
+The function `rpois` generates a vector of length `n.samples` filled with random deviates ing the Poisson distribution parameterized by `lambda`. Each value in the vector is an integer representing the number of events that occurred randomly in a specific time bin, based on the sampling frequency (`fs`).
 
 * A time bin corresponds to a single sample, determined by fs (e.g., if `fs = 2000`, each time bin is 1/2000 seconds).
 * The expected number of events per bin is `lambda = lambda_g/fs`, where `lambda_g` is the event rate in events per second.
@@ -198,7 +198,7 @@ A numeric vector of length max.delay + 1. The first element is zero, correspondi
 
 #### **Example**
 ```r
-# Following Equation 11 ([Díaz et al., 2026](https://doi.org/10.1038/s42003-026-10357-y)), Psi can be numerically calculated as:
+# Following Equation 11 (https://doi.org/10.1038/s42003-026-10357-y), Psi can be numerically calculated as:
 Psi <- diff(var.delay(signal, max.delay))/2
 ```
 
@@ -230,7 +230,7 @@ A numeric vector of length `max.delay`, representing the negative derivative val
 
 #### **Example**
 ```r
-# Following Equation 12 ([Díaz et al., 2026](https://doi.org/10.1038/s42003-026-10357-y)), Psi can be numerically calculated as:
+# Following Equation 12 (https://doi.org/10.1038/s42003-026-10357-y), Psi can be numerically calculated as:
 Psi <- neg.diff.ACF(signal, max.delay)
 ```
 
