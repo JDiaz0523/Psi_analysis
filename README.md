@@ -6,7 +6,7 @@ This repository contains functions supporting the methodology presented in Díaz
 
 The framework aims to characterize the arrhythmic structure of the electroencephalogram (EEG) by modeling EEG as a superposition of arrhythmic transients (pulses), using a Filtered Poisson Process (FPP) as a generative model. This repository provides functions for generating artificial signals based on FPP, enabling controlled experiments with arbitrary pulse waveforms at varying pulse densities.
 
-The accompanying figure (adapted from [Díaz et al., 2026](https://doi.org/10.1038/s42003-026-10357-y) Figure 1a) illustrates these artificial signals, where pulses following an alpha function (blue trace) are combined at densities ranging from 1 to 10,000 pulses per second. At high densities, the signal converges to colored Gaussian noise (bottom trace). Despite this interference, our framework, built on novel mathematical relations, enables an approximate reconstruction of the underlying pulse waveform from the statistical properties of such signals, demonstrating its potential to provide a new feature space (i.e., arrhythmic components) for EEG characterization.
+The accompanying figure (adapted from [Díaz, J. et al., 2026](https://doi.org/10.1038/s42003-026-10357-y) Figure 1a) illustrates these artificial signals, where pulses following an alpha function (blue trace) are combined at densities ranging from 1 to 10,000 pulses per second. At high densities, the signal converges to colored Gaussian noise (bottom trace). Despite this interference, our framework, built on novel mathematical relations, enables an approximate reconstruction of the underlying pulse waveform from the statistical properties of such signals, demonstrating its potential to provide a new feature space (i.e., arrhythmic components) for EEG characterization.
 
 <p align="center">
   <img src="images/FPP.png" alt="Filtered Poisson process (FPP)" width="350" height="442">
@@ -59,7 +59,7 @@ plot(x.time, FPP, type = "l",
 
 Details
 
-The function `rpois` generates a vector of length `n.samples` filled with random deviates ing the Poisson distribution parameterized by `lambda`. Each value in the vector is an integer representing the number of events that occurred randomly in a specific time bin, based on the sampling frequency (`fs`).
+The function `rpois` generates a vector of length `n.samples` filled with random deviates following the Poisson distribution parameterized by `lambda`. Each value in the vector is an integer representing the number of events that occurred randomly in a specific time bin, based on the sampling frequency (`fs`).
 
 * A time bin corresponds to a single sample, determined by fs (e.g., if `fs = 2000`, each time bin is 1/2000 seconds).
 * The expected number of events per bin is `lambda = lambda_g/fs`, where `lambda_g` is the event rate in events per second.
@@ -180,7 +180,7 @@ pulse2 <- unitE(do.alpha.pulse(0.1, 1000, 1), outputE = 2)
 ### **var.delay**
 ---
 #### **Description**
-Calculates the variance of a given signal after subtracting progressively delayed copies of itself. This function, corresponding to the variance of $\hat{X}$ ([Díaz et al., 2026](https://doi.org/10.1038/s42003-026-10357-y), Eq. 4), is primarily intended for demonstrating mathematical concepts through numerical methods.
+Calculates the variance of a given signal after subtracting progressively delayed copies of itself. This function, corresponding to the variance of $\hat{X}$ ([Díaz, J. et al., 2026](https://doi.org/10.1038/s42003-026-10357-y), Eq. 4), is primarily intended for demonstrating mathematical concepts through numerical methods.
 
 #### **Usage**
 ```r
@@ -204,7 +204,7 @@ Psi <- diff(var.delay(signal, max.delay))/2
 
 Notes
 
-- This function operates slowly in R (an interpreted language) and is intended only for demonstrations, such as numerically illustrating the equivalence of Equations 11 and 12 ([Díaz et al., 2026](https://doi.org/10.1038/s42003-026-10357-y)), supported by Equation 9 (see demo script 2).
+- This function operates slowly in R (an interpreted language) and is intended only for demonstrations, such as numerically illustrating the equivalence of Equations 11 and 12 ([Díaz, J. et al., 2026](https://doi.org/10.1038/s42003-026-10357-y)), supported by Equation 9 (see demo script 2).
 
 - For improved performance, use the neg.diff.ACF function, which calculates Psi efficiently by leveraging the optimized `acf` function.
 
@@ -375,7 +375,7 @@ EEG.Psi.SC <- psi.extract(psi.matrix, 500)
 ### **plot.Psi.matrix**
 ---
 #### **Description**
-The `plot.Psi.matrix` function visualizes a Psi-matrix using a dual pseudocolor scale designed to emphasize the significance of zero in the Psi-scale ([Díaz et al., 2026](https://doi.org/10.1038/s42003-026-10357-y), Figs. 6, 8, and 10). The function applies two separate color gradients—one for negative values and another for positive values—that meet seamlessly at zero with a shared black color. This ensures clear visual differentiation of positive and negative regions in the matrix.
+The `plot.Psi.matrix` function visualizes a Psi-matrix using a dual pseudocolor scale designed to emphasize the significance of zero in the Psi-scale ([Díaz, J. et al., 2026](https://doi.org/10.1038/s42003-026-10357-y), Figs. 6, 8, and 10). The function applies two separate color gradients—one for negative values and another for positive values—that meet seamlessly at zero with a shared black color. This ensures clear visual differentiation of positive and negative regions in the matrix.
 
 To accommodate the expected distribution of Psi-values (mostly positive), the positive color gradient spans a broader range and includes more levels of colors, as defined by the grad.ratio parameter (typically at least three times the span of the negative range).
 
